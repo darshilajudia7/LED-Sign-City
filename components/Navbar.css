@@ -1,0 +1,105 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* Announcement Bar */
+.announcement-bar {
+    background: #0d52cd;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.announcement-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+}
+
+.announcement-track span {
+    padding-inline: 2rem;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Navigation Links */
+.navbar-nav {
+    gap: 0.75rem;
+}
+
+.nav-link-custom {
+    color: #212529 !important;
+    font-weight: 500;
+    padding-inline: 0.75rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link-custom:hover {
+    color: #0d52cd !important;
+}
+
+/* Icons */
+.nav-icon {
+    font-size: 1.25rem;
+    color: #212529;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-icon:hover {
+    color: #0d52cd;
+}
+
+/* Dropdown */
+.custom-dropdown {
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.custom-dropdown .dropdown-item {
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+/* Dropdown Animation */
+.dropdown-menu.show {
+    animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dropdown Arrow */
+.dropdown-toggle::after {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.show::after {
+    transform: rotate(180deg);
+}
