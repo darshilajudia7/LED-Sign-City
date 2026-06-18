@@ -1,142 +1,317 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+:root {
+  /* Theme Colors */
+  --background: #ffffff;
+  --foreground: #171717;
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  /* Brand Specific Colors */
+  --brand-blue: #1e56b8;
+  --brand-yellow: #ffcc00;
+  --brand-yellow-hover: #e6b800;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  /* Typography & Layout defaults */
+  --font-main: Arial, Helvetica, sans-serif;
+}
 
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  color: #ffffff;
+  overflow: hidden;
+  background: url('/bg.png') no-repeat center center / cover;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.hero-title {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 550px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+/* Custom Yellow Button */
+.btn-custom-yellow {
+  background-color: var(--brand-yellow);
+  color: #000000;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-custom-yellow:hover {
+  background-color: var(--brand-yellow-hover);
+  color: #000000;
+}
+
+.star-rating .star {
+  color: var(--brand-yellow);
+  font-size: 1.2rem;
+  margin-right: 0.1rem;
+}
+
+/* Industries Section */
+.industries-section {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.section-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* Card Styling */
+.industry-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  height: 520px;
+  background: #000;
+}
+
+.card-img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.card-img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+.card-img-overlay-custom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.card-title-custom {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.card-text-custom {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.card-link-custom {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.card-link-custom:hover {
+  color: var(--brand-yellow);
+}
+
+/* Slider Controls */
+.slider-window {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slider-item {
+  flex: 0 0 100%;
+  padding: 0 12px;
+}
+
+.slider-arrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 2rem;
+  padding-right: 15px;
+}
+
+.arrow-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  width: 40px;
   height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.arrow-btn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.conversation-section {
+  background: #f3f3f3;
+  padding: 80px 0;
+}
+
+.conversation-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.conversation-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.conversation-card {
+  position: relative;
+  height: 430px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.conversation-card:hover .card-image {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.1));
+  z-index: 1;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 30px;
+  left: 25px;
+  z-index: 2;
+}
+
+.card-content h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-content a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.slider-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.slider-navigation button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.slider-navigation button:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .conversation-title {
+    font-size: 34px;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .conversation-card {
+    height: 350px;
+  }
+
+  .card-content h3 {
+    font-size: 24px;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+/* Responsive Media Queries */
+@media (min-width: 768px) {
+  .slider-item {
+    flex: 0 0 50%;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 991px) {
+  .hero-section {
+    background: linear-gradient(180deg, rgba(13, 110, 253, 0.95) 60%, rgba(13, 110, 253, 0.7) 100%),
+      url('/images/carwash-bg.jpg') no-repeat center center / cover;
+    padding: 60px 0;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+@media (min-width: 1200px) {
+  .slider-item {
+    flex: 0 0 33.333%;
   }
 }
