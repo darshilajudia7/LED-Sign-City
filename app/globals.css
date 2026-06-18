@@ -1,88 +1,208 @@
 :root {
-  --font-main: Arial, Helvetica, sans-serif;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   --background: #ffffff;
   --foreground: #171717;
   --brand-blue: #1e56b8;
   --brand-accent-blue: #0d6efd;
-  --brand-yellow: #ffcc00;
-  --brand-yellow-hover: #e6b800;
+
+  --brand-yellow: #ffb703;
+  --brand-yellow-hover: #fcab00;
 
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-dark-gray: #212529;
-  --color-charcoal: #495057;
-  --color-muted-gray: #666666;
-  --color-light-bg: #f5f5f5;
 
-  --fs-hero-title: 3rem;
-  --fs-section-title: 2.5rem;
-  --fs-showcase-title: 48px;
-  --fs-card-title-lg: 30px;
-  --fs-card-title-sm: 1.25rem;
-  --fs-body-lg: 1.15rem;
-  --fs-body-md: 1rem;
-  --fs-body-sm: 0.925rem;
-  --fs-body-xs: 0.875rem;
+  --fs-hero-title: clamp(2.2rem, 4vw, 3.2rem);
+  --fs-body-lg: 1.1rem;
 
-  --section-padding: 80px 0;
-  --border-radius-lg: 12px;
-  --border-radius-md: 10px;
-  --border-radius-sm: 8px;
+  --border-radius-sm: 30px;
   --transition-smooth: 0.3s ease;
-  --transition-fast: 0.2s ease;
 }
 
 body {
   font-family: var(--font-main);
   background-color: var(--background);
   color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero-section {
-  min-height: 100vh;
+  height: 800px;
+  max-width: 100%;
+
   display: flex;
   align-items: center;
   color: var(--color-white);
   overflow: hidden;
-  background: url('/bg.png') no-repeat center center / cover;
+  position: relative;
+  opacity: 1;
+  background:
+    url('/bg.png') no-repeat center center / cover;
+  padding: 60px 0;
+}
+
+/* Left side container rules matching Figma */
+.hero-content-wrapper {
+  max-width: 1060px;
+  min-height: 284px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 1;
+}
+
+.hero-heading-block {
+  max-width: 1060px;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 1;
 }
 
 .hero-title {
-  font-weight: 700;
-  font-size: var(--fs-hero-title);
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 0;
 }
 
+/* Paragraph Subtitle Setup */
 .hero-subtitle {
-  font-size: var(--fs-body-lg);
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 550px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0;
+}
+
+.hero-actions-group {
+  max-width: 552px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
 }
 
 .btn-custom-yellow {
+  width: 292px;
+  height: 44px;
   background-color: var(--brand-yellow);
-  color: var(--color-black);
-  font-weight: 600;
+  color: var(--color-black) !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-sm);
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: background-color var(--transition-fast);
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-smooth);
 }
 
 .btn-custom-yellow:hover {
   background-color: var(--brand-yellow-hover);
-  color: var(--color-black);
+  transform: translateY(-1px);
 }
 
-.star-rating .star {
+.see-how-link {
+  width: 248px;
+  height: 44px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity var(--transition-smooth);
+}
+
+.see-how-link:hover {
+  opacity: 0.85;
+}
+
+.arrow-icon {
+  transition: transform var(--transition-smooth);
+}
+
+.see-how-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.star-rating-section {
+  max-width: 1060px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
+}
+
+.star-group {
+  width: 113px;
+  height: 20px;
+  display: flex;
+  gap: 2px;
+  opacity: 1;
+}
+
+.star-group .star {
   color: var(--brand-yellow);
-  font-size: 1.2rem;
-  margin-right: 0.1rem;
+  font-size: 16px;
+}
+
+.rating-score {
+  width: 29px;
+  height: 25px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+}
+
+.review-count {
+  width: 144px;
+  height: 20px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.hero-led-img {
+  filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-dots .dot {
+  width: 16px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.carousel-dots .dot.active {
+  background-color: var(--brand-yellow);
 }
 
 /* Industries We Serve Section */
@@ -336,6 +456,179 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   max-width: 450px;
+}
+
+/* Custom Brand Colors & Overrides */
+.bg-xignz-blue {
+  background-color: #1a56db !important;
+}
+
+.text-xignz-blue {
+  color: #1a56db !important;
+}
+
+.btn-xignz-yellow {
+  background-color: #ffcc00 !important;
+  color: #000000 !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-xignz-yellow:hover {
+  background-color: #e6b800 !important;
+  transform: scale(1.03);
+}
+
+/* Feature Link Hover State */
+.xignz-link {
+  color: #1a56db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.xignz-link:hover {
+  text-decoration: underline;
+}
+
+/* Video Wrapper & Custom Play Button */
+.video-container-mock {
+  min-height: 480px;
+  background-color: #0b0c10;
+  border-radius: 8px;
+}
+
+.video-play-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.video-play-btn:hover {
+  transform: scale(1.1);
+}
+
+.video-play-btn svg {
+  fill: #ffcc00;
+  width: 75px;
+  height: 75px;
+}
+
+.hover-opacity-link:hover {
+  opacity: 0.85;
+}
+
+.video-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #0b0c10;
+}
+
+.led-section {
+  background: #0f4fc2;
+  color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.step-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+
+.step-badge {
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.step-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.custom-btn {
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.note-text {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-10%);
+  font-family: cursive;
+  font-size: 24px;
+  color: #fff;
+  z-index: 2;
+}
+
+.arrow {
+  display: block;
+  font-size: 40px;
+  margin-top: -5px;
+}
+
+
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 32px;
+  }
+
+  .image-wrapper {
+    margin-top: 40px;
+  }
+
+  .note-text {
+    position: static;
+    margin-bottom: 20px;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .step-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .step-badge {
+    display: inline-block;
+  }
 }
 
 /* Responsive */

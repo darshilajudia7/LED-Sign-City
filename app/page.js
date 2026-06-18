@@ -73,50 +73,71 @@ const FEATURES = [
 export default function Home() {
   return (
     <main>
+      
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="container">
-          <div className="row align-items-center gy-5">
-            <div className="col-lg-6 col-12">
-              <h1 className="hero-title mb-3">
-                Let Your Sign Do More.<br />
-                Control the Conversation.
-              </h1>
-              <p className="hero-subtitle mb-4">
-                Let your sign do more for you. Move from static, inconvenient signs to powerful digital displays.
-              </p>
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-4">
-                <Link href="#" className="btn btn-custom-yellow shadow-sm">
-                  <span>✦</span> Build Your Custom Sign Now
-                </Link>
-                <Link href="#" className="text-white text-decoration-none fw-semibold d-inline-flex align-items-center gap-2">
-                  See How XIGNZ Works <span className="fs-5">→</span>
-                </Link>
-              </div>
-              <div className="d-flex align-items-center gap-2 star-rating">
-                <div className="d-flex text-warning">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="star">★</span>
-                  ))}
+      <section className="hero-section position-relative">
+        <div className="container-fluid px-4 px-md-5">
+          <div className="row align-items-center justify-content-between g-4">
+
+            {/* Left Column */}
+            <div className="col-xl-6 col-lg-6 col-12 ps-lg-5">
+              <div className="hero-content-wrapper">
+
+                <div className="hero-heading-block">
+                  <h1 className="hero-title">
+                    Let Your Sign Do More.<br className="d-none d-sm-inline" />
+                    Control the Conversation.
+                  </h1>
                 </div>
-                <span className="fw-bold ms-1">5.0</span>
-                <span className="text-white-50 text-sm">Based on 128 reviews</span>
+
+                <p className="hero-subtitle">
+                  Let your sign do more for you. Move from static, inconvenient signs to powerful digital displays.
+                </p>
+
+                <div className="hero-actions-group">
+                  <Link href="#" className="btn btn-custom-yellow shadow-sm">
+                    <span className="star-icon">✦</span> Build Your Custom Sign Now
+                  </Link>
+                  <Link href="#" className="see-how-link text-white text-decoration-none">
+                    See How XIGNZ Works <span className="arrow-icon">→</span>
+                  </Link>
+                </div>
+
+                {/* Star Rating Section */}
+                <div className="star-rating-section">
+                  <div className="star-group text-warning">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="star">★</span>
+                    ))}
+                  </div>
+                  <span className="rating-score">5.0</span>
+                  <span className="review-count">Based on 128 reviews</span>
+                </div>
+
               </div>
             </div>
 
-            <div className="col-lg-6 col-12 text-center text-lg-end">
-              <div className="img-container pe-lg-4">
+            {/* Right Column */}
+            <div className="col-xl-5 col-lg-6 col-12 text-center text-lg-end pe-lg-5">
+              <div className="img-container position-relative d-inline-block">
                 <Image
                   src="/LED.png"
                   alt="Digital LED Sign Cabinets"
                   width={580}
                   height={350}
                   priority
-                  className="img-fluid object-contain"
+                  className="img-fluid object-contain hero-led-img"
                 />
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="position-absolute bottom-0 end-0 mb-4 me-5 d-none d-md-flex gap-1 carousel-dots">
+          <span className="dot active"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
         </div>
       </section>
 
