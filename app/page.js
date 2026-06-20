@@ -9,64 +9,166 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+// CARDS
 const CARDS = [
-  { title: "Fixed Outdoor LED Signs", button: "Shop Fixed Outdoor", image: "/Solutions-1.png" },
-  { title: "Mobile LED Signs", button: "Shop Mobile", image: "/Solutions-2.png" },
-  { title: "Indoor LED Signs", button: "Shop Indoor", image: "/Solutions-3.png" },
-  { title: "Custom LED Displays", button: "Shop Custom", image: "/Solutions-4.png" },
+  {
+    id: "fixed-outdoor",
+    title: "Fixed Outdoor LED Signs",
+    button: "Shop Fixed Outdoor",
+    image: "/Solutions-1.png",
+    link: "/shop/fixed-outdoor"
+  },
+  {
+    id: "mobile-led",
+    title: "Mobile LED Signs",
+    button: "Shop Mobile",
+    image: "/Solutions-2.png",
+    link: "/shop/mobile"
+  },
+  {
+    id: "indoor-led",
+    title: "Indoor LED Signs",
+    button: "Shop Indoor",
+    image: "/Solutions-3.png",
+    link: "/shop/indoor"
+  },
+  {
+    id: "custom-displays",
+    title: "Custom LED Displays",
+    button: "Shop Custom",
+    image: "/Solutions-4.png",
+    link: "/shop/custom"
+  },
 ];
 
+// INDUSTRIES
 const INDUSTRIES = [
   {
     id: "public-nonprofit",
     title: "LED Signs for Public and Non-Profit Organizations",
     description: "Share community updates, events, missions, and causes with programmable displays that reach far and wide.",
     linkText: "Shop Public & Non-Profit Signs",
-    imgSrc: "/serve-1.png"
+    imgSrc: "/serve-1.png",
+    link: "/industries/public-nonprofit"
   },
   {
     id: "retail-businesses",
     title: "LED Signs for Retail and Businesses",
     description: "Drive foot traffic with instant price changes, promotions, specials, and eye-catching messages that convert customers.",
     linkText: "Shop Retail & Business Signs",
-    imgSrc: "/serve-2.png"
+    imgSrc: "/serve-2.png",
+    link: "/industries/retail-businesses"
   },
   {
     id: "partners-resellers",
     title: "LED Signs for Partners and Resellers",
     description: "White-label options, bulk pricing, and easy integration for sign shops, installers, or affiliates to expand your offerings.",
     linkText: "Shop Partner & Resellers Signs",
-    imgSrc: "/serve-3.png"
+    imgSrc: "/serve-3.png",
+    link: "/industries/partners-resellers"
   },
   {
     id: "custom-architecture",
     title: "LED Signs for Custom Architecture",
     description: "Tailor-made structural screen specs built natively to dynamically align into bespoke geometric structures.",
     linkText: "Shop Custom Signs",
-    imgSrc: "/serve-4.png"
+    imgSrc: "/serve-4.png",
+    link: "/industries/custom-architecture"
   }
 ];
 
+// FEATURES
 const FEATURES = [
   {
+    id: "no-obsolescence",
     title: "We flipped the old model no planned obsolescence",
-    text: "Unlike most LED signs replaced every 5–10 years (industry standard lifespan before major issues or full swap), XIGNZ is designed to upgrade forever. Your sign gets better over time with free software updates (new features, efficiency) and hardware module swaps (brighter, sharper, more advanced tech)."
+    text: "Unlike most LED signs replaced every 5–10 years (industry standard lifespan before major issues or full swap), XIGNZ is designed to upgrade forever. Your sign gets better over time with free software updates (new features, efficiency) and hardware module swaps (brighter, sharper, more advanced tech).",
+    link: "/features/no-obsolescence"
   },
   {
+    id: "modular-platform",
     title: "Modular XIGNZ platform true flexibility",
-    text: "Interchangeable cabinets and components let you build or expand to any size without starting over. Resize or refresh? No tearing down structures—just add or upgrade modules seamlessly."
+    text: "Interchangeable cabinets and components let you build or expand to any size without starting over. Resize or refresh? No tearing down structures—just add or upgrade modules seamlessly.",
+    link: "/features/modular-platform"
   },
   {
+    id: "resolution-choices",
     title: "Smart, no-confusion resolution choices",
-    text: "Limited options tailored to real viewing distances—so you get optimal clarity and performance without overwhelming specs or wrong picks."
+    text: "Limited options tailored to real viewing distances—so you get optimal clarity and performance without overwhelming specs or wrong picks.",
+    link: "/features/resolution-choices"
   },
   {
+    id: "massive-savings",
     title: "Massive savings on upgrades like changing light bulbs",
-    text: "Replace only modules at end-of-life or for better tech—save up to 80% vs. full replacement. Avoid new permits in most cases (module swaps often don't trigger full sign permits like new installs do), skip shopping for a whole new sign, dodge high labor costs for tear-down/re-install, and eliminate new structure builds for size changes. Upgrades are fast, low-disruption, and dramatically cheaper long-term."
+    text: "Replace only modules at end-of-life or for better tech—save up to 80% vs. full replacement. Avoid new permits in most cases (module swaps often don't trigger full sign permits like new installs do), skip shopping for a whole new sign, dodge high labor costs for tear-down/re-install, and eliminate new structure builds for size changes. Upgrades are fast, low-disruption, and dramatically cheaper long-term.",
+    link: "/features/massive-savings"
   },
   {
+    id: "lifetime-support",
     title: "Lifetime support + aligned incentives",
-    text: "Backed by a 2-year comprehensive parts replacement warranty and lifetime prorated parts exchange program—even if old parts disappear, new compatible components fit right in. We're more motivated than other suppliers to deliver exceptional service and make upgrades a no-brainer—because your ongoing success (and easy upgrades) keeps you with us for decades. We're in it together."
+    text: "Backed by a 2-year comprehensive parts replacement warranty and lifetime prorated parts exchange program—even if old parts disappear, new compatible components fit right in. We're more motivated than other suppliers to deliver exceptional service and make upgrades a no-brainer—because your ongoing success (and easy upgrades) keeps you with us for decades. We're in it together.",
+    link: "/features/lifetime-support"
+  }
+];
+
+// BENEFIT_BOXES
+const BENEFIT_BOXES = [
+  {
+    id: "consistent-design",
+    image: "/feature-1.svg",
+    title: "Super Consistent Design",
+    description: "Every XIGNZ sign uses the same 7 core components 85%+ identical across all sizes. Only the modules change (based on size & viewing distance). Less hassle, easier upgrades, no surprises.",
+    link: "/benefits/consistent-design"
+  },
+  {
+    id: "easy-software",
+    image: "/feature-2.svg",
+    title: "Easy Software Everywhere",
+    description: "One powerful app for all signs: animated text, images, videos. Beginners use built-in tools; pros upload JPEGs/MP4s. Schedule everything in one go: holidays, random days, whatever.",
+    link: "/benefits/easy-software"
+  },
+  {
+    id: "smart-brightness",
+    image: "/feature-3.svg",
+    title: "Auto-Smart Brightness",
+    description: "Built-in light sensor adjusts day/night automatically. Failsafe defaults + software scheduling overrides. Looks perfect, saves energy, no manual tweaks.",
+    link: "/benefits/smart-brightness"
+  },
+  {
+    id: "lifetime-help",
+    image: "/feature-4.svg",
+    title: "Lifetime Support",
+    description: "2-year full parts warranty + lifetime prorated exchange. Lifetime free remote help & onboarding (campaigns never die if someone leaves). Free quarterly design training sessions (exclusive to customers).",
+    link: "/benefits/lifetime-help"
+  }
+];
+
+// How it works
+const stepsList = [
+  {
+    step: "STEP 1",
+    title: "Configure Your LED Sign Online",
+    text: "Jump into our custom LED sign builder. Enter your desired size (width and height), choose single or double-sided, select the best resolution for your viewing distance (we show the top 3-4 options), and add extras like frames, poles, or professional installation."
+  },
+  {
+    step: "STEP 2",
+    title: "Get an Instant LED Sign Quote",
+    text: "See real-time pricing for your outdoor LED sign or digital message board full breakdown, no surprises."
+  },
+  {
+    step: "STEP 3",
+    title: "Lock In Your LED Sign with $1 Down",
+    text: "Love the quote? Hold your LED sign price and secure your order with just $1 down. This confirms your programmable LED sign build and locks everything in."
+  },
+  {
+    step: "STEP 4",
+    title: "Specialist Reviews Your LED Sign Build",
+    text: "Our team quickly reviews your configuration, confirms the specs for your LED sign are perfect for your project, and reaches out if any tweaks will make it even better."
+  },
+  {
+    step: "STEP 5",
+    title: "Pay the Balance and Production Starts",
+    text: "We send the final invoice. Once paid, your LED sign production starts typically ready in 4-8 weeks, depending on size and options."
   }
 ];
 
@@ -101,7 +203,7 @@ export default function Home() {
                     </span>
                   </Link>
 
-                  <Link href="#" className="see-how-link text-white text-decoration-none">
+                  <Link href="#how-it-works" className="see-how-link text-white text-decoration-none">
                     <span className="link-text">
                       See How XIGNZ Works
                       <span className="icon-box arrow-icon">
@@ -190,7 +292,7 @@ export default function Home() {
                         <p className="card-para-custom">{item.description}</p>
 
                         <div className="last-row-custom">
-                          <Link href="#" className="card-link-custom">
+                          <Link href={item.link} className="card-link-custom">
                             {item.linkText}
                           </Link>
                           <i className="bi bi-arrow-right arrow-icon-spec"></i>
@@ -242,8 +344,8 @@ export default function Home() {
                 1200: { slidesPerView: 3 },
               }}
             >
-              {CARDS.map((card, index) => (
-                <SwiperSlide key={index} className="h-auto">
+              {CARDS.map((card) => (
+                <SwiperSlide key={card.id} className="h-auto">
                   <div className="conversation-card">
                     <Image
                       src={card.image}
@@ -254,7 +356,7 @@ export default function Home() {
                     <div className="overlay"></div>
                     <div className="card-content">
                       <h3>{card.title}</h3>
-                      <Link href="#">
+                      <Link href={card.link}>
                         {card.button} <i className="bi bi-arrow-right"></i>
                       </Link>
                     </div>
@@ -293,15 +395,15 @@ export default function Home() {
               </div>
 
               <div className="features-container">
-                {FEATURES.map((feature, index) => (
-                  <div key={index} className="feature-block">
+                {FEATURES.map((feature) => (
+                  <div key={feature.id} className="feature-block">
                     <h3 className="feature-title">
                       {feature.title}
                     </h3>
                     <p className="feature-text">
                       {feature.text}
                     </p>
-                    <Link href="#" className="feature-link">
+                    <Link href={feature.link} className="feature-link">
                       Read More
                     </Link>
                   </div>
@@ -335,6 +437,151 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Benefit section */}
+      <section className="Benefit0-section">
+
+        {/* Blue Block Layout */}
+        <div id="how-it-works" className="hero-block">
+          <div className="hero-inside-container">
+            <div className="hero-text-content">
+              Ready to own an LED sign that evolves, saves you serious money, and stays supported forever?
+            </div>
+
+            <div className="hero-actions-wrapper">
+              <button className="custom-action-btn">
+                <span className="icon-box-24">
+                  <i className="bi bi-plus-lg"></i>
+                </span>
+                <span className="custom-action-btn-text">
+                  Build Your Custom Sign Now
+                </span>
+              </button>
+
+              <Link href="#" className="redirect-link-container">
+                <span className="redirect-text-content">See How XIGNZ Works</span>
+                <span className="icon-box-24">
+                  <i className="bi bi-arrow-right"></i>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* White Block Layout */}
+        <div className="white-main-block">
+          <div className="text-grid-container">
+            <div className="features-inner-block">
+              <h2 className="main-section-heading">
+                Why Owning a XIGNZ Sign Actually Pays Off?
+              </h2>
+
+              <div className="features-grid-content">
+                <div className="row g-x-4 g-y-5">
+                  {BENEFIT_BOXES.map((box) => (
+                    <div key={box.id} className="col-12 col-lg-6">
+                      <div className="feature-box">
+                        <div className="feature-box-heading-layer">
+                          <div className="icon-padding-wrapper">
+                            <div className="bootstrap-custom-icon">
+                              <Image
+                                src={box.image}
+                                alt={box.title}
+                                fill
+                                priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 437px"
+                              />
+
+                            </div>
+                          </div>
+                          <h5 className="feature-heading-text">{box.title}</h5>
+                        </div>
+                        <div className="feature-paragraph-block">
+                          <p className="feature-description">{box.description}</p>
+                          <Link href={box.link} className="feature-read-more">
+                            Read More
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Video Block Section */}
+          <div className="video-block-wrapper">
+            <iframe
+              className="youtube-iframe-embed"
+              src="https://www.youtube.com/embed/0i_6IzleU70"
+              title="How to Wire Multi-Row LED Signs: XIGNZ Modular Series by LED Sign City"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works section */}
+      <section className="dashboard">
+        <div className="sub-dashboard">
+          <div className="top-sub-dashboard">
+            <h2>
+              How It Works: Build Your Custom LED Sign Online
+            </h2>
+            <p>
+              Ready to build your LED sign online? Our LED sign configurator
+              makes it super straightforward to configure your programmable
+              LED sign or digital sign in just a few steps no complicated
+              quotes or waiting around.
+            </p>
+          </div>
+          <div className="bottom-sub-dashboard">
+
+            {/* Left Side */}
+            <div className="left-side">
+              {
+                stepsList.map((item, index) => (
+                  <div
+                    className="layout-content"
+                    key={index}
+                  >
+                    <div className="heading-row">
+                      <button className="step-btn">
+                        {item.step}
+                      </button>
+                      <h3 className="step-title">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p>
+                      {item.text}
+                    </p>
+                  </div>
+                ))
+              }
+
+              <button className="bottom-button">
+                <span className="custom-star-btn">✦</span>
+                Build Your Custom LED Sign
+              </button>
+            </div>
+
+            {/* Right Side */}
+            <div className="right-side">
+              <Image
+                src="/monitor.png"
+                alt="LED sign configurator preview"
+                width={620}
+                height={557}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     </main>
   );

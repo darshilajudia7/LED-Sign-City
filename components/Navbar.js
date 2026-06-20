@@ -12,6 +12,7 @@ const Navbar = () => {
 
     return (
         <header className="w-100 built-with-bootstrap position-relative">
+
             {/* Announcement Bar */}
             <div className="w-100 custom-top-bar text-white">
                 <div className="d-flex text-nowrap announcement-track align-items-center">
@@ -72,27 +73,27 @@ const Navbar = () => {
                                     Shop Displays
                                 </button>
                                 <ul className="dropdown-menu shadow-sm border-0 rounded-3 p-2 custom-mobile-dropdown">
-                                    <li><Link href="/shop-1" className="dropdown-item rounded-2">Outdoor LED Displays</Link></li>
-                                    <li><Link href="/shop-2" className="dropdown-item rounded-2">Indoor LED Signs</Link></li>
+                                    <li><Link href="#" className="dropdown-item rounded-2">Outdoor LED Displays</Link></li>
+                                    <li><Link href="#" className="dropdown-item rounded-2">Indoor LED Signs</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link href="/custom-sign-builder" className="nav-link p-0">
+                                <Link href="#" className="nav-link p-0">
                                     Custom Sign Builder
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/about" className="nav-link p-0">
+                                <Link href="#" className="nav-link p-0">
                                     About
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/blog" className="nav-link p-0">
+                                <Link href="#" className="nav-link p-0">
                                     Blog
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/support" className="nav-link p-0">
+                                <Link href="#" className="nav-link p-0">
                                     Support
                                 </Link>
                             </li>
@@ -113,7 +114,7 @@ const Navbar = () => {
                             </div>
 
                             <Link
-                                href="/custom-sign-builder"
+                                href="#"
                                 className="btn text-dark custom-yellow-btn w-100 w-lg-auto"
                             >
                                 <span className="custom-star-btn">✦</span> Build Your Sign
