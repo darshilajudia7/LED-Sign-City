@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -236,7 +237,41 @@ const works = [
   },
 ];
 
+// Question - Answer Section
+const faqData = [
+  {
+    question: "Do you sell ad space on billboards, or do you sell the physical signs?",
+    answer: "We sell the physical LED signs. We are the manufacturer, which means you are buying the actual hardware directly from us. You own the screen, you control the messaging 100%, and if you sell ad space on it, you keep all the profits."
+  },
+  {
+    question: "What makes your XIGNZ platform different from other LED signs?",
+    answer: "Our XIGNZ platform provides ultra-modular configurations, energy-efficient display hardware, and cloud-native software built directly for easy, localized control."
+  },
+  {
+    question: "Will I need a new city permit if I upgrade my sign later?",
+    answer: "Permit requirements depend on your city ordinances. However, because our systems are modular, dimension-identical upgrades often do not require completely new zoning permits."
+  },
+  {
+    question: "I am not a \"tech person.\" Is the sign difficult to program?",
+    answer: "Not at all. We intentionally created an intuitive, drag-and-drop web dashboard that makes uploading media files and scheduling announcements as easy as sending an email."
+  },
+  {
+    question: "Do I have to pay the full amount before I can even talk to a human?",
+    answer: "Absolutely not. Consultation, discovery calls, and exact blueprint specifications are completely free before you ever put down a deposit."
+  },
+  {
+    question: "How do your signs handle different lighting conditions? Will it blind drivers at night?",
+    answer: "Our signs feature automated ambient light photodiode sensors. They dynamically dim down to acceptable regulatory nit levels at night and scale up brightness during direct sunlight exposure."
+  }
+];
+
 export default function Home() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <main className="overflow-hidden">
 
@@ -733,7 +768,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* wors section */}
+      {/* work section */}
       <section className="works-section">
         <div className="works-container">
           <div className="works-top">
@@ -805,6 +840,68 @@ export default function Home() {
               <i className="bi bi-arrow-right"></i>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Question - Answer Question */}
+      <section className="faq-main-section container-fluid">
+        <div className="faq-sub-section">
+
+          {/* Top Section */}
+          <div className="faq-top-section">
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Got questions about XIGNZ modular LED signs, the build process, upgrades, warranty, software, or anything else?
+              We're putting together the most common ones right here check back soon as we add them. visibility.
+            </p>
+          </div>
+
+          {/* Middle Layout */}
+          <div className="faq-middle-layout">
+            {faqData.map((item, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div key={index} className="faq-item">
+                  <button
+                    className="faq-header"
+                    onClick={() => toggleFAQ(index)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className="faq-question">{item.question}</span>
+                    <span className="faq-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform var(--transition-smooth)' }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
+                    <p>{item.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom Section */}
+          <div className="faq-bottom-section">
+            <a href="#" className="faq-btn">
+              Don't see your question?
+              <span className="faq-btn-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </a>
+            <p className="faq-bottom-line">We're happy to answer directly reach out anytime.</p>
+          </div>
+
         </div>
       </section>
 
