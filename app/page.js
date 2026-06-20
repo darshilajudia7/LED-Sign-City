@@ -172,6 +172,70 @@ const stepsList = [
   }
 ];
 
+// Review
+const reviewData = [
+  {
+    id: 1,
+    videoUrl: "https://www.youtube.com/embed/5UxaloWhHso",
+    reviewText: "The hardware-as-a-service model changed how we budget. The display visibility is incredible and saved us thousands!",
+    name: "Marcus R.",
+    role: "Auto Dealership, Houston TX",
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    videoUrl: "https://www.youtube.com/embed/CS5LPLtZhDI",
+    reviewText: "Our custom 3D acrylic letters look magnificent against the city nightscape. Customers mention it all the time.",
+    name: "Elena K.",
+    role: "Boutique Owner, New York NY",
+    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop"
+  },
+  {
+    id: 3,
+    videoUrl: "https://www.youtube.com/embed/yMAbhFe8Be8",
+    reviewText: "Transformative energy. Upgrading to the large scale programmable digital boards dropped our signage swap labor by 30%.",
+    name: "David L.",
+    role: "Venue Manager, Chicago IL",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop"
+  },
+  {
+    id: 4,
+    videoUrl: "https://www.youtube.com/embed/yX9yN_BxoRQ",
+    reviewText: "The waterproof smart app integration lets us flash dynamic promotions and animations seamlessly straight from the storefront.",
+    name: "Chloe M.",
+    role: "Retail Shop, Los Angeles CA",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop"
+  }
+];
+
+// Action
+const works = [
+  {
+    img: "/Solutions-1.png",
+    title: "Double-sided programmable LED sign for highway visibility",
+    desc: "Highway double-sided display",
+    location: "Houston, TX",
+  },
+  {
+    img: "/Solutions-2.png",
+    title: "Full-color LED sign for retail storefront",
+    desc: "Storefront full-color sign",
+    location: "Rosenberg, TX",
+  },
+  {
+    img: "/Solutions-3.png",
+    title: "Double-sided programmable LED sign",
+    desc: "Highway digital display",
+    location: "New York, NY",
+  },
+  {
+    img: "/Solutions-4.png",
+    title: "Outdoor LED display solution",
+    desc: "Business signage",
+    location: "Texas, TX",
+  },
+];
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
@@ -439,7 +503,7 @@ export default function Home() {
       </section>
 
       {/* Benefit section */}
-      <section className="Benefit0-section">
+      <section className="Benefit-section">
 
         {/* Blue Block Layout */}
         <div id="how-it-works" className="hero-block">
@@ -450,9 +514,7 @@ export default function Home() {
 
             <div className="hero-actions-wrapper">
               <button className="custom-action-btn">
-                <span className="icon-box-24">
-                  <i className="bi bi-plus-lg"></i>
-                </span>
+                <span className="custom-star-btn">✦</span>
                 <span className="custom-action-btn-text">
                   Build Your Custom Sign Now
                 </span>
@@ -524,7 +586,7 @@ export default function Home() {
       </section>
 
       {/* How it works section */}
-      <section className="dashboard">
+      <section className="How-it-works-section">
         <div className="sub-dashboard">
           <div className="top-sub-dashboard">
             <h2>
@@ -582,6 +644,169 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Review Section */}
+      <section className="review-section container-fluid px-0">
+        <div className="sub-dashboard">
+
+          <div className="top-dashboard">
+            <h2>Hear From Our Growing Number of Happy Critics</h2>
+            <p>
+              We take pride in bringing cinematic milestones to life. Hundreds of movie enthusiasts and verified
+              critics love the high-octane storytelling, exceptional musical scores, and cinematic brilliance
+              witnessed in these hand-picked Indian blockbusters.
+            </p>
+          </div>
+
+          {/* Video Slider Area */}
+          <div className="video-dashboard">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={20}
+              slidesPerView={1}
+              navigation={{
+                nextEl: '.arrow-next',
+                prevEl: '.arrow-prev',
+              }}
+              breakpoints={{
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 }
+              }}
+              className="mySwiper"
+            >
+              {reviewData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div className="each-video-dashboard">
+                    <div className="sub-video-dashboard-inner">
+
+                      <div className="video-container">
+                        <iframe
+                          src={item.videoUrl}
+                          title={`Movie Trailer ${item.id}`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+
+                      <div className="description-block">
+                        <div className="star-rating">
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                          <i className="bi bi-star-fill"></i>
+                        </div>
+
+                        <p className="review-content">{item.reviewText}</p>
+
+                        <div className="reviewer-side">
+                          <img src={item.img} alt={item.name} className="reviewer-logo" />
+                          <div className="reviewer-info">
+                            <span className="reviewer-name">{item.name}</span>
+                            <span className="reviewer-position">{item.role}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="slider-footer-controls">
+              <Link href="#" className="review-link-btn">
+                Want to read all movie reviews? <i className="bi bi-arrow-right"></i>
+              </Link>
+
+              <div className="custom-nav-arrows">
+                <button className="nav-arrow arrow-prev" aria-label="Previous slide">
+                  <i className="bi bi-arrow-left"></i>
+                </button>
+                <button className="nav-arrow arrow-next" aria-label="Next slide">
+                  <i className="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* wors section */}
+      <section className="works-section">
+        <div className="works-container">
+          <div className="works-top">
+            <h2>
+              See XIGNZ Signs in Action
+            </h2>
+            <p>
+              Real businesses, real results. Check out some of our recent installs making an impact across Texas and beyond.
+            </p>
+          </div>
+          <div className="works-slider">
+
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                nextEl: ".works-next",
+                prevEl: ".works-prev"
+              }}
+              slidesPerView={3}
+              spaceBetween={20}
+              loop={true}
+            >
+              {
+                works.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="work-card">
+                      <img
+                        src={item.img}
+                        alt="sign"
+                      />
+
+                      <div className="work-content">
+                        <h3>
+                          {item.title}
+                        </h3>
+                        <p>
+                          {item.desc}
+                        </p>
+                        <span>
+                          {item.location}
+                        </span>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              }
+            </Swiper>
+
+            <div className="slider-arrow">
+
+              <button className="works-prev">
+                <i className="bi bi-arrow-left"></i>
+              </button>
+
+              <button className="works-next">
+                <i className="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <div className="works-bottom">
+            <button className="works-btn">
+              <span className="custom-star-btn">✦</span>
+              Inspired? Join our growing list of happy customers.
+            </button>
+            <a href="#" className="works-link">
+              Want to see all past projects?
+              <i className="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
 
     </main>
   );
