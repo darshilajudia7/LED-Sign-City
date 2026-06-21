@@ -10,6 +10,10 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+// =========================================================================
+// DATA CONFIGURATIONS
+// =========================================================================
+
 // CARDS
 const CARDS = [
   {
@@ -265,6 +269,10 @@ const faqData = [
   }
 ];
 
+// =========================================================================
+// MAIN HOMEPAGE COMPONENT
+// =========================================================================
+
 export default function Home() {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -275,52 +283,47 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
 
+
       {/* Hero Section */}
       <section className="hero-section position-relative d-flex align-items-center">
-        <div className="container-xl hero-container">
-          <div className="row align-items-center justify-content-between g-4 g-lg-5">
+        <div className="container-xl">
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-center text-lg-start">
 
             {/* Left Column */}
             <div className="col-lg-7 col-12">
               <div className="hero-content-wrapper">
-                <div className="hero-heading-block">
-                  <h1 className="hero-title">
-                    Let Your Sign Do More.<br className="d-none d-sm-inline" />
-                    Control the Conversation.
-                  </h1>
-                </div>
+                <h1 className="hero-title mb-3">
+                  Let Your Sign Do More.<br className="d-none d-sm-inline" />
+                  Control the Conversation.
+                </h1>
 
-                <p className="hero-subtitle">
+                <p className="hero-subtitle mb-4">
                   Let your sign do more for you. Move from static, inconvenient signs to powerful digital.
                 </p>
 
-                <div className="hero-actions-group">
+                <div className="hero-actions-group mb-4 justify-content-center justify-content-lg-start">
                   <Link href="#" className="btn btn-custom-yellow shadow-sm">
                     <span className="custom-star-btn">✦</span>
-                    <span className="btn-text">
-                      Build Your Custom Sign Now
-                    </span>
+                    Build Your Custom Sign Now
                   </Link>
 
                   <Link href="#how-it-works" className="see-how-link text-white text-decoration-none">
-                    <span className="link-text">
-                      See How XIGNZ Works
-                      <span className="icon-box arrow-icon">
-                        <i className="bi bi-arrow-right"></i>
-                      </span>
+                    See How XIGNZ Works
+                    <span className="arrow-icon ms-2">
+                      <i className="bi bi-arrow-right"></i>
                     </span>
                   </Link>
                 </div>
 
-                <div className="star-rating-section">
-                  <div className="star-group">
+                <div className="star-rating-section justify-content-center justify-content-lg-start">
+                  <div className="star-group me-2">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className="star">
                         <i className="bi bi-star-fill"></i>
                       </span>
                     ))}
                   </div>
-                  <span className="rating-score">5.0</span>
+                  <span className="rating-score me-2">5.0</span>
                   <span className="review-count">Based on 128 reviews</span>
                 </div>
               </div>
@@ -328,7 +331,7 @@ export default function Home() {
 
             {/* Right Column */}
             <div className="col-lg-5 col-12 d-flex justify-content-center justify-content-lg-end">
-              <div className="hero-image-wrapper">
+              <div className="hero-image-wrapper mt-4 mt-lg-0">
                 <Image
                   src="/LED.png"
                   alt="Digital LED Sign Cabinets"
@@ -344,67 +347,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries We Serve Section */}
-      <section className="industries-section position-relative">
-        <div className="container-xl sub-main-container">
 
-          {/* Top Heading */}
-          <div className="top-heading-group">
-            <h2 className="section-heading-custom">Industries We Serve</h2>
-            <p className="section-paragraph-custom">
-              We make LED signs for organizations, businesses, and sign shops. High-resolution digital signage that lets you share your message, mission, values, or goals with full control.
-            </p>
+
+      {/* Industries Section */}
+      <section className="industries-section position-relative">
+        <div className="container-xl">
+
+          {/* Heading */}
+          <div className="row mb-5">
+            <div className="col-12">
+              <h2 className="section-heading-custom mb-3 text-white">Industries We Serve</h2>
+              <p className="section-paragraph-custom mb-0 text-white">
+                We make LED signs for organizations, businesses, and sign shops. High-resolution digital signage that lets you share your message, mission, values, or goals with full control.
+              </p>
+            </div>
           </div>
 
-          {/* Slider Layout */}
-          <div className="slider-layout-wrapper">
-            <div className="photos-slider-container">
-              <Swiper
-                modules={[Navigation]}
-                spaceBetween={24}
-                slidesPerView={1}
-                navigation={{
-                  prevEl: '.industries-prev-arrow',
-                  nextEl: '.industries-next-arrow',
-                }}
-                breakpoints={{
-                  768: { slidesPerView: 2 },
-                  1200: { slidesPerView: 3 },
-                }}
-                className="mySwiper h-100"
-              >
-                {INDUSTRIES.map((item) => (
-                  <SwiperSlide key={item.id} className="h-auto">
-                    <div className="industry-card-custom">
-                      <div className="card-img-wrapper">
-                        <Image
-                          src={item.imgSrc}
-                          alt={item.title}
-                          fill
-                          priority
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 437px"
-                        />
-                      </div>
+          {/* Slider  */}
+          <div className="position-relative">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={24}
+              slidesPerView={1}
+              navigation={{
+                prevEl: '.industries-prev-arrow',
+                nextEl: '.industries-next-arrow',
+              }}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 },
+              }}
+              className="mySwiper h-100"
+            >
+              {INDUSTRIES.map((item) => (
+                <SwiperSlide key={item.id} className="h-auto">
+                  <div className="industry-card-custom">
+                    <div className="card-img-wrapper">
+                      <Image
+                        src={item.imgSrc}
+                        alt={item.title}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 437px"
+                      />
+                    </div>
 
-                      <div className="card-content-custom">
-                        <h3 className="card-heading-custom">{item.title}</h3>
-                        <p className="card-para-custom">{item.description}</p>
+                    <div className="card-content-custom">
+                      <h3 className="card-heading-custom">{item.title}</h3>
+                      <p className="card-para-custom">{item.description}</p>
 
-                        <div className="last-row-custom">
-                          <Link href={item.link} className="card-link-custom">
-                            {item.linkText}
-                          </Link>
-                          <i className="bi bi-arrow-right arrow-icon-spec"></i>
-                        </div>
+                      <div className="last-row-custom">
+                        <Link href={item.link} className="card-link-custom">
+                          {item.linkText}
+                        </Link>
+                        <i className="bi bi-arrow-right arrow-icon-spec"></i>
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-            {/* Slider Arrow Controls */}
-            <div className="slider-arrows-row">
+            {/* Arrow */}
+            <div className="slider-arrows-row justify-content-center justify-content-md-end mt-4">
               <button className="arrow-btn-spec industries-prev-arrow" aria-label="Previous Slide">
                 <i className="bi bi-arrow-left arrow-icon-spec"></i>
               </button>
@@ -413,23 +418,30 @@ export default function Home() {
               </button>
             </div>
           </div>
+
         </div>
       </section>
 
+
+
       {/* Conversation Section */}
-      <section className="conversation-section">
+      <section className="conversation-section position-relative">
         <div className="container-xl">
-          <div className="heading-area">
-            <h2>Control the Conversation</h2>
-            <p>
-              Start the conversation where your customers are. We make
-              fixed outdoor LED signs, mobile LED signs, and indoor LED
-              signs so you can reach people wherever they are.
-            </p>
+
+          {/* Heading */}
+          <div className="row mb-4">
+            <div className="col-12 col-lg-9 col-xl-8">
+              <h2 className="section-heading-custom mb-3">Control the Conversation</h2>
+              <p className="section-paragraph-custom mb-0">
+                Start the conversation where your customers are. We make
+                fixed outdoor LED signs, mobile LED signs, and indoor LED
+                signs so you can reach people wherever they are.
+              </p>
+            </div>
           </div>
 
           {/* Slider */}
-          <div className="swiper-outer-wrapper position-relative">
+          <div className="position-relative">
             <Swiper
               modules={[Navigation]}
               navigation={{
@@ -453,10 +465,11 @@ export default function Home() {
                       className="card-image"
                     />
                     <div className="overlay"></div>
+
                     <div className="card-content">
                       <h3>{card.title}</h3>
                       <Link href={card.link}>
-                        {card.button} <i className="bi bi-arrow-right"></i>
+                        {card.button} <i className="bi bi-arrow-right ms-1"></i>
                       </Link>
                     </div>
                   </div>
@@ -465,44 +478,47 @@ export default function Home() {
             </Swiper>
 
             {/* Slider Navigation Buttons */}
-            <div className="slider-buttons">
-              <button className="conversation-prev">
+            <div className="slider-buttons justify-content-center justify-content-md-end mt-4">
+              <button className="conversation-prev" aria-label="Previous Slide">
                 <i className="bi bi-arrow-left"></i>
               </button>
-              <button className="conversation-next">
+              <button className="conversation-next" aria-label="Next Slide">
                 <i className="bi bi-arrow-right"></i>
               </button>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* Value Proposition Section */}
-      <section className="showcase-section">
+
+
+      {/* Why Choose Us Section */}
+      <section id="why-choose-us" className="showcase-section position-relative">
         <div className="container-fluid px-0">
           <div className="row g-0 align-items-stretch">
 
-            {/* Left Column */}
-            <div className="col-12 col-xl-6 col-left-panel">
-              <div className="showcase-title-area">
-                <h2 className="showcase-title">
+            {/* Left Panel */}
+            <div className="col-12 col-xl-6 showcase-content-column">
+              <header className="showcase-header mb-5">
+                <h2 className="showcase-main-title mb-3">
                   Why Choose LED Sign City?
                 </h2>
-                <p className="showcase-description">
+                <p className="showcase-main-desc mb-0">
                   We offer two ways to understand our difference: a quick summary for the gist, or the full story for all the details.
                 </p>
-              </div>
+              </header>
 
-              <div className="features-container">
+              <div className="row g-5 showcase-features-grid">
                 {FEATURES.map((feature) => (
-                  <div key={feature.id} className="feature-block">
-                    <h3 className="feature-title">
+                  <div key={feature.id} className="col-12 showcase-feature-item">
+                    <h3 className="showcase-feature-title mb-2">
                       {feature.title}
                     </h3>
-                    <p className="feature-text">
+                    <p className="showcase-feature-desc mb-2">
                       {feature.text}
                     </p>
-                    <Link href={feature.link} className="feature-link">
+                    <Link href={feature.link} className="showcase-feature-link">
                       Read More
                     </Link>
                   </div>
@@ -510,396 +526,472 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column */}
-            <div className="col-12 col-xl-6 showcase-visuals-container">
-              <div className="visuals-wrapper">
-                <div className="visual-top-panel">
-                  <Image
-                    src="/LED-1.png"
-                    alt="Interchangeable LED Cabinets"
-                    fill
-                    className="object-fit-contain"
-                    priority
-                  />
-                </div>
-                <div className="visual-bottom-panel">
-                  <Image
-                    src="/LED-2.png"
-                    alt="Pixel Perfect LED Modules"
-                    fill
-                    className="object-fit-contain"
-                    priority
-                  />
+            {/* Right Panel */}
+            <div className="col-12 col-xl-6 showcase-visuals-column">
+              <div className="showcase-image-frame">
+                <Image
+                  src="/LED-1.png"
+                  alt="Interchangeable LED Cabinets"
+                  fill
+                  className="object-fit-contain p-3"
+                  priority
+                />
+              </div>
+              <div className="showcase-image-frame">
+                <Image
+                  src="/LED-2.png"
+                  alt="Pixel Perfect LED Modules"
+                  fill
+                  className="object-fit-contain p-3"
+                  priority
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Benefits Section */}
+      <section className="benefits-section position-relative">
+
+        {/* CTA section */}
+        <div id="how-it-works" className="benefits-cta-block py-5">
+          <div className="container-xl">
+            <div className="row justify-content-center text-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="benefits-cta-text mb-4">
+                  Ready to own an LED sign that evolves, saves you serious money, and stays supported forever?
+                </h2>
+
+                <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
+                  <button className="btn-custom-yellow px-4 py-2">
+                    <span className="custom-star-btn">✦</span>
+                    Build Your Custom Sign Now
+                  </button>
+
+                  <Link href="#" className="benefits-cta-link ms-md-3">
+                    See How XIGNZ Works <i className="bi bi-arrow-right ms-2"></i>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Benefit section */}
-      <section className="Benefit-section">
+        {/* Main Block */}
+        <div className="benefits-content-block py-5 bg-white">
+          <div className="container-xl">
 
-        {/* Blue Block Layout */}
-        <div id="how-it-works" className="hero-block">
-          <div className="hero-inside-container">
-            <div className="hero-text-content">
-              Ready to own an LED sign that evolves, saves you serious money, and stays supported forever?
+            <div className="row mb-5">
+              <div className="col-12 col-xl-9">
+                <h2 className="benefits-main-title mb-0">
+                  Why Owning a XIGNZ Sign Actually Pays Off?
+                </h2>
+              </div>
             </div>
 
-            <div className="hero-actions-wrapper">
-              <button className="custom-action-btn">
-                <span className="custom-star-btn">✦</span>
-                <span className="custom-action-btn-text">
-                  Build Your Custom Sign Now
-                </span>
-              </button>
+            <div className="row g-4 g-md-5 mb-5">
+              {BENEFIT_BOXES.map((box) => (
+                <div key={box.id} className="col-12 col-md-6">
+                  <div className="benefits-card d-flex flex-column flex-sm-row align-items-center align-items-sm-start text-center text-sm-start gap-3">
 
-              <Link href="#" className="redirect-link-container">
-                <span className="redirect-text-content">See How XIGNZ Works</span>
-                <span className="icon-box-24">
-                  <i className="bi bi-arrow-right"></i>
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* White Block Layout */}
-        <div className="white-main-block">
-          <div className="text-grid-container">
-            <div className="features-inner-block">
-              <h2 className="main-section-heading">
-                Why Owning a XIGNZ Sign Actually Pays Off?
-              </h2>
-
-              <div className="features-grid-content">
-                <div className="row g-x-4 g-y-5">
-                  {BENEFIT_BOXES.map((box) => (
-                    <div key={box.id} className="col-12 col-lg-6">
-                      <div className="feature-box">
-                        <div className="feature-box-heading-layer">
-                          <div className="icon-padding-wrapper">
-                            <div className="bootstrap-custom-icon">
-                              <Image
-                                src={box.image}
-                                alt={box.title}
-                                fill
-                                priority
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 437px"
-                              />
-
-                            </div>
-                          </div>
-                          <h5 className="feature-heading-text">{box.title}</h5>
-                        </div>
-                        <div className="feature-paragraph-block">
-                          <p className="feature-description">{box.description}</p>
-                          <Link href={box.link} className="feature-read-more">
-                            Read More
-                          </Link>
-                        </div>
-                      </div>
+                    {/* Icon Visual Frame wrapper */}
+                    <div className="benefits-icon-frame position-relative flex-shrink-0">
+                      <Image
+                        src={box.image}
+                        alt={box.title}
+                        fill
+                        priority
+                        className="p-3 object-fit-contain"
+                        sizes="80px"
+                      />
                     </div>
-                  ))}
+
+                    <div className="benefits-card-body">
+                      <h3 className="benefits-card-title mb-2">{box.title}</h3>
+                      <p className="benefits-card-desc mb-2">{box.description}</p>
+                      <Link href={box.link} className="benefits-card-link">
+                        Read More
+                      </Link>
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* You Tube */}
+            <div className="row justify-content-center">
+              <div className="col-12">
+                <div className="benefits-video-wrapper shadow-sm">
+                  <iframe
+                    className="benefits-video-iframe"
+                    src="https://www.youtube.com/embed/0i_6IzleU70"
+                    title="How to Wire Multi-Row LED Signs: XIGNZ Modular Series by LED Sign City"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Video Block Section */}
-          <div className="video-block-wrapper">
-            <iframe
-              className="youtube-iframe-embed"
-              src="https://www.youtube.com/embed/0i_6IzleU70"
-              title="How to Wire Multi-Row LED Signs: XIGNZ Modular Series by LED Sign City"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
+
       </section>
 
-      {/* How it works section */}
-      <section className="How-it-works-section">
-        <div className="sub-dashboard">
-          <div className="top-sub-dashboard">
-            <h2>
-              How It Works: Build Your Custom LED Sign Online
-            </h2>
-            <p>
-              Ready to build your LED sign online? Our LED sign configurator
-              makes it super straightforward to configure your programmable
-              LED sign or digital sign in just a few steps no complicated
-              quotes or waiting around.
-            </p>
-          </div>
-          <div className="bottom-sub-dashboard">
 
-            {/* Left Side */}
-            <div className="left-side">
-              {
-                stepsList.map((item, index) => (
-                  <div
-                    className="layout-content"
-                    key={index}
-                  >
-                    <div className="heading-row">
-                      <button className="step-btn">
+
+      {/* Process Section */}
+      <section className="process-section position-relative py-5">
+        <div className="container-xl">
+
+          {/* Header */}
+          <div className="row mb-5">
+            <div className="col-12">
+              <h2 className="process-main-title mb-3">
+                How It Works: Build Your Custom LED Sign Online
+              </h2>
+              <p className="process-main-desc mb-0">
+                Ready to build your LED sign online? Our LED sign configurator
+                makes it super straightforward to configure your programmable
+                LED sign or digital sign in just a few steps—no complicated
+                quotes or waiting around.
+              </p>
+            </div>
+          </div>
+
+          <div className="row align-items-center g-4 g-lg-5">
+
+            {/* Right Column */}
+            <div className="col-12 col-lg-6 order-lg-last d-flex justify-content-center">
+              <div className="process-image-frame">
+                <Image
+                  src="/monitor.png"
+                  alt="LED sign configurator preview"
+                  width={620}
+                  height={557}
+                  priority
+                  className="img-fluid object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Left Column */}
+            <div className="col-12 col-lg-6">
+              <div className="process-steps-list d-flex flex-column gap-4">
+                {stepsList.map((item, index) => (
+                  <div className="process-step-item" key={index}>
+                    <div className="d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-2">
+                      <span className="process-step-badge badge bg-white text-black fw-bold px-3 py-2">
                         {item.step}
-                      </button>
-                      <h3 className="step-title">
+                      </span>
+                      <h3 className="process-step-title mb-0 ms-sm-1">
                         {item.title}
                       </h3>
                     </div>
-                    <p>
+                    <p className="process-step-desc mb-0">
                       {item.text}
                     </p>
                   </div>
-                ))
-              }
+                ))}
 
-              <button className="bottom-button">
-                <span className="custom-star-btn">✦</span>
-                Build Your Custom LED Sign
-              </button>
-            </div>
-
-            {/* Right Side */}
-            <div className="right-side">
-              <Image
-                src="/monitor.png"
-                alt="LED sign configurator preview"
-                width={620}
-                height={557}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Review Section */}
-      <section className="review-section container-fluid px-0">
-        <div className="sub-dashboard">
-
-          <div className="top-dashboard">
-            <h2>Hear From Our Growing Number of Happy Critics</h2>
-            <p>
-              We take pride in bringing cinematic milestones to life. Hundreds of movie enthusiasts and verified
-              critics love the high-octane storytelling, exceptional musical scores, and cinematic brilliance
-              witnessed in these hand-picked Indian blockbusters.
-            </p>
-          </div>
-
-          {/* Video Slider Area */}
-          <div className="video-dashboard">
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={20}
-              slidesPerView={1}
-              navigation={{
-                nextEl: '.arrow-next',
-                prevEl: '.arrow-prev',
-              }}
-              breakpoints={{
-                320: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1200: { slidesPerView: 3 }
-              }}
-              className="mySwiper"
-            >
-              {reviewData.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <div className="each-video-dashboard">
-                    <div className="sub-video-dashboard-inner">
-
-                      <div className="video-container">
-                        <iframe
-                          src={item.videoUrl}
-                          title={`Movie Trailer ${item.id}`}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-
-                      <div className="description-block">
-                        <div className="star-rating">
-                          <i className="bi bi-star-fill"></i>
-                          <i className="bi bi-star-fill"></i>
-                          <i className="bi bi-star-fill"></i>
-                          <i className="bi bi-star-fill"></i>
-                          <i className="bi bi-star-fill"></i>
-                        </div>
-
-                        <p className="review-content">{item.reviewText}</p>
-
-                        <div className="reviewer-side">
-                          <img src={item.img} alt={item.name} className="reviewer-logo" />
-                          <div className="reviewer-info">
-                            <span className="reviewer-name">{item.name}</span>
-                            <span className="reviewer-position">{item.role}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <div className="slider-footer-controls">
-              <Link href="#" className="review-link-btn">
-                Want to read all movie reviews? <i className="bi bi-arrow-right"></i>
-              </Link>
-
-              <div className="custom-nav-arrows">
-                <button className="nav-arrow arrow-prev" aria-label="Previous slide">
-                  <i className="bi bi-arrow-left"></i>
-                </button>
-                <button className="nav-arrow arrow-next" aria-label="Next slide">
-                  <i className="bi bi-arrow-right"></i>
-                </button>
+                <div className="pt-2">
+                  <button className="btn-custom-yellow px-4 py-2 w-sm-auto">
+                    <span className="custom-star-btn">✦</span>
+                    Build Your Custom LED Sign
+                  </button>
+                </div>
               </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
-      {/* work section */}
-      <section className="works-section">
-        <div className="works-container">
-          <div className="works-top">
-            <h2>
-              See XIGNZ Signs in Action
-            </h2>
-            <p>
-              Real businesses, real results. Check out some of our recent installs making an impact across Texas and beyond.
-            </p>
-          </div>
-          <div className="works-slider">
 
-            <Swiper
-              modules={[Navigation]}
-              navigation={{
-                nextEl: ".works-next",
-                prevEl: ".works-prev"
-              }}
-              slidesPerView={3}
-              spaceBetween={20}
-              loop={true}
-            >
-              {
-                works.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="work-card">
+
+      {/* Review Section */}
+      <section className="reviews-section py-5 px-3 px-md-0">
+        <div className="container-xl">
+
+          {/* Top Dashboard Header Block */}
+          <div className="row mb-4 mb-md-5">
+            <div className="col-12">
+              <h2 className="reviews-main-title mb-3">
+                Hear From Our Growing Number of Happy Critics
+              </h2>
+              <p className="reviews-main-desc mb-0">
+                We take pride in bringing cinematic milestones to life. Hundreds of movie enthusiasts and verified
+                critics love the high-octane storytelling, exceptional musical scores, and cinematic brilliance
+                witnessed in these hand-picked Indian blockbusters.
+              </p>
+            </div>
+          </div>
+
+          {/* Video Slider */}
+          <div className="row">
+            <div className="col-12">
+
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={20}
+                slidesPerView={1}
+                navigation={{
+                  nextEl: '.reviews-arrow-next',
+                  prevEl: '.reviews-arrow-prev',
+                }}
+                breakpoints={{
+                  768: { slidesPerView: 2 },
+                  1200: { slidesPerView: 3 }
+                }}
+                className="mySwiper"
+              >
+                {reviewData.map((item) => (
+                  <SwiperSlide key={item.id} className="h-auto">
+                    <div className="reviews-card p-4 shadow-sm">
+                      <div className="reviews-card-inner d-flex flex-column gap-3">
+
+                        {/* Video Aspect Container */}
+                        <div className="reviews-video-frame position-relative">
+                          <iframe
+                            src={item.videoUrl}
+                            title={`Movie Trailer ${item.id}`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+
+                        <div className="reviews-card-body d-flex flex-column justify-content-between gap-2">
+                          <div>
+                            <div className="reviews-stars d-flex gap-1 mb-2">
+                              {[...Array(5)].map((_, i) => (
+                                <i key={i} className="bi bi-star-fill"></i>
+                              ))}
+                            </div>
+                            <p className="reviews-card-text mb-0">{item.reviewText}</p>
+                          </div>
+
+                          <div className="reviews-profile d-flex align-items-center gap-2 mt-2">
+                            <img src={item.img} alt={item.name} className="reviews-profile-avatar rounded-circle img-fluid" />
+                            <div className="reviews-profile-info d-flex flex-column">
+                              <span className="reviews-profile-name">{item.name}</span>
+                              <span className="reviews-profile-role text-muted">{item.role}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Iocns and links */}
+              <div className="mt-4">
+
+                <div className="row mb-3">
+                  <div className="col-12 d-flex justify-content-center justify-content-md-end">
+                    <div className="reviews-arrows d-flex gap-2">
+                      <button className="reviews-arrow-btn reviews-arrow-prev" aria-label="Previous slide">
+                        <i className="bi bi-arrow-left"></i>
+                      </button>
+                      <button className="reviews-arrow-btn reviews-arrow-next" aria-label="Next slide">
+                        <i className="bi bi-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div className="row">
+                  <div className="col-12 d-flex justify-content-center">
+                    <Link href="#" className="reviews-cta-link fw-medium text-decoration-none">
+                      Want to read all movie reviews? <i className="bi bi-arrow-right ms-2"></i>
+                    </Link>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+      {/* Works Section */}
+      <section className="works-section position-relative py-5">
+        <div className="container-xl">
+
+          {/* Header */}
+          <div className="row mb-5 text-center text-md-start">
+            <div className="col-12 col-xl-10">
+              <h2 className="works-main-title mb-3">
+                See XIGNZ Signs in Action
+              </h2>
+              <p className="works-main-desc mb-0">
+                Real businesses, real results. Check out some of our recent installs making an impact across Texas and beyond.
+              </p>
+            </div>
+          </div>
+
+
+          {/* Slider */}
+          <div className="row mb-5">
+            <div className="col-12 position-relative">
+
+              <Swiper
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".works-next",
+                  prevEl: ".works-prev"
+                }}
+                spaceBetween={24}
+                slidesPerView={1}
+                loop={true}
+                breakpoints={{
+                  768: { slidesPerView: 2 },
+                  1200: { slidesPerView: 3 }
+                }}
+                className="mySwiper"
+              >
+                {works.map((item, index) => (
+                  <SwiperSlide key={index} className="h-auto">
+                    <div className="works-card position-relative overflow-hidden h-100 shadow-sm">
                       <img
                         src={item.img}
-                        alt="sign"
+                        alt={item.title || "Installation Showcase"}
+                        className="works-card-img img-fluid w-100 h-100 object-fit-cover"
                       />
 
-                      <div className="work-content">
-                        <h3>
+                      <div className="works-card-content position-absolute p-4 d-flex flex-column gap-2">
+                        <h3 className="works-card-title mb-1">
                           {item.title}
                         </h3>
-                        <p>
+                        <p className="works-card-desc mb-1">
                           {item.desc}
                         </p>
-                        <span>
+                        <span className="works-card-location small fw-medium">
                           {item.location}
                         </span>
                       </div>
                     </div>
                   </SwiperSlide>
-                ))
-              }
-            </Swiper>
+                ))}
+              </Swiper>
 
-            <div className="slider-arrow">
+              {/* Navigation */}
+              <div className="works-arrows d-flex gap-3 justify-content-center justify-content-md-end mt-4">
+                <button className="works-arrow-btn works-prev" aria-label="Previous slide">
+                  <i className="bi bi-arrow-left"></i>
+                </button>
+                <button className="works-arrow-btn works-next" aria-label="Next slide">
+                  <i className="bi bi-arrow-right"></i>
+                </button>
+              </div>
 
-              <button className="works-prev">
-                <i className="bi bi-arrow-left"></i>
-              </button>
-
-              <button className="works-next">
-                <i className="bi bi-arrow-right"></i>
-              </button>
             </div>
-
           </div>
 
-          <div className="works-bottom">
-            <button className="works-btn">
-              <span className="custom-star-btn">✦</span>
-              Inspired? Join our growing list of happy customers.
-            </button>
-            <a href="#" className="works-link">
-              Want to see all past projects?
-              <i className="bi bi-arrow-right"></i>
-            </a>
+          <div className="row mt-4">
+            <div className="col-12 text-center">
+              <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
+                <button className="works-action-btn btn bg-white text-black border fw-medium px-4 py-2">
+                  <span className="custom-star-btn me-2">✦</span>
+                  Inspired? Join our growing list of happy customers.
+                </button>
+                <Link href="#" className="works-action-link text-white text-decoration-none fw-medium px-4 py-2 d-inline-flex align-items-center gap-2">
+                  Want to see all past projects?
+                  <i className="bi bi-arrow-right"></i>
+                </Link>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* Question - Answer Question */}
-      <section className="faq-main-section container-fluid">
-        <div className="faq-sub-section">
+      {/* FAQ  Section */}
+      <section className="faq-section py-5">
+        <div className="container-xl">
 
-          {/* Top Section */}
-          <div className="faq-top-section">
-            <h2>Frequently Asked Questions</h2>
-            <p>
-              Got questions about XIGNZ modular LED signs, the build process, upgrades, warranty, software, or anything else?
-              We're putting together the most common ones right here check back soon as we add them. visibility.
-            </p>
+          {/* Header */}
+          <div className="row mb-5">
+            <div className="col-12 col-xl-10">
+              <h2 className="faq-main-title mb-3">Frequently Asked Questions</h2>
+              <p className="faq-main-desc mb-0">
+                Got questions about XIGNZ modular LED signs, the build process, upgrades, warranty, software, or anything else?
+                We're putting together the most common ones right here—check back soon as we add them.
+              </p>
+            </div>
           </div>
 
-          {/* Middle Layout */}
-          <div className="faq-middle-layout">
-            {faqData.map((item, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div key={index} className="faq-item">
-                  <button
-                    className="faq-header"
-                    onClick={() => toggleFAQ(index)}
-                    aria-expanded={isOpen}
-                  >
-                    <span className="faq-question">{item.question}</span>
-                    <span className="faq-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform var(--transition-smooth)' }}
+          <div className="row mb-5">
+            <div className="col-12">
+              <div className="faq-accordion-group d-flex flex-column gap-4 mt-5">
+                {faqData.map((item, index) => {
+                  const isOpen = openIndex === index;
+                  return (
+                    <div key={index} className="faq-item border-bottom pb-4">
+                      <button
+                        className="faq-header d-flex justify-content-between align-items-center w-100 p-0 bg-transparent border-0 text-start"
+                        onClick={() => toggleFAQ(index)}
+                        aria-expanded={isOpen}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
-                    <p>{item.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
+                        <span className="faq-question fw-semibold pe-3">{item.question}</span>
+                        <span className="faq-icon-wrapper flex-shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="faq-icon"
+                            style={{
+                              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                              transition: 'transform var(--transition-smooth)'
+                            }}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div
+                        className={`faq-answer-pane ${isOpen ? 'open' : ''}`}
+                        style={{
+                          maxHeight: isOpen ? '500px' : '0px',
+                          marginTop: isOpen ? '15px' : '0px'
+                        }}
+                      >
+                        <p className="faq-answer-text mb-0">{item.answer}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="faq-bottom-section">
-            <a href="#" className="faq-btn">
-              Don't see your question?
-              <span className="faq-btn-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </span>
-            </a>
-            <p className="faq-bottom-line">We're happy to answer directly reach out anytime.</p>
+          {/* Bottom CTA */}
+          <div className="row text-center">
+            <div className="col-12 d-flex flex-column align-items-center gap-2">
+              <Link href="#" className="faq-cta-btn fw-medium text-decoration-none px-4 py-2 rounded">
+                Don't see your question?
+                <span className="faq-cta-arrow ms-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </Link>
+              <p className="faq-footer-line mb-0 mt-1">We're happy to answer directly—reach out anytime.</p>
+            </div>
           </div>
 
         </div>
