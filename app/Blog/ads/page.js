@@ -90,7 +90,14 @@ export default function Ads() {
 
                                             {/* Iamge */}
                                             <div className="image-header-container w-100 position-relative">
-                                                <img src={node.imageSrc} alt={node.title} className="w-100 h-100 object-fit-cover card-thumbnail" />
+                                                <Image
+                                                    src={node.imageSrc}
+                                                    alt={node.title}
+                                                    placeholder="blur"
+                                                    blurDataURL={node.imageSrc}
+                                                    fill
+                                                    className="object-fit-cover card-thumbnail"
+                                                />
                                             </div>
 
                                             <div className="card-data-body w-100 d-flex flex-column align-items-start p-3 p-md-4">

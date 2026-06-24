@@ -19,7 +19,7 @@ export default function Blog() {
             title: 'Software',
             description: 'Step-by-step guides for Viplex Express, VNNOX Cloud, LED OK, and more.',
             count: 15,
-            path: '#',
+            path: 'Blog/software',
         },
         {
             id: 'installation',
