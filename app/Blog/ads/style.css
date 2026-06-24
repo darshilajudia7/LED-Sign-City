@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary-blue: #1752BD;
+    --primary-blue-hover: #0d3885;
+    --bg-white: #FFFFFF;
+    --text-dark: #101010;
+    --text-muted: #626262;
+    --border-light: #F3F4F6;
+    --accent-yellow: #FFCC02;
+    --shadow-hover: rgba(23, 82, 189, 0.12);
+}
+
+/* Top Header */
+.bg-primary-blue {
+    background-color: var(--primary-blue);
+}
+
+.top-section-frame {
+    min-height: 250px;
+    padding: 40px 20px;
+}
+
+.main-heading-insights {
+    font-family: 'Anek Latin', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.main-para {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+/* Main content */
+.canvas-wrapper {
+    width: 100%;
+    min-height: 1280px;
+    background-color: var(--bg-white);
+    padding: 40px 15px;
+}
+
+.layout-grid-frame {
+    max-width: 1351px;
+    margin: 0 auto;
+}
+
+.blog-card-item {
+    width: 100%;
+    max-width: 437px;
+    min-height: 550px;
+    height: 100%;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    background-color: var(--bg-white);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.image-header-container {
+    height: 276px;
+    overflow: hidden;
+}
+
+.card-thumbnail {
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+        filter 0.5s ease-in-out;
+    filter: brightness(0.95) saturate(0.85);
+}
+
+.card-data-body {
+    flex-grow: 1;
+    display: flex;
+
+    flex-direction: column;
+}
+
+.inner-content-frame {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.category-pill {
+    padding: 2px 12px;
+    height: 24px;
+    background: var(--accent-yellow);
+    border-radius: 9999px;
+}
+
+.category-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.timestamp-container {
+    font-family: 'SF Pro', -apple-system, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.heading-title-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.description-paragraph-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-muted);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+}
+
+.description-paragraph-text.expanded {
+    display: block;
+    overflow: visible;
+}
+
+.action-link-anchor {
+    text-decoration: none !important;
+}
+
+.action-link-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--primary-blue);
+    transition: color 0.2s ease-in-out;
+}
+
+.arrow-icon {
+    transition: transform 0.2s ease-in-out;
+    color: var(--primary-blue);
+}
+
+.rotate-arrow {
+    transform: rotate(-90deg);
+}
+
+.blog-card-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px var(--shadow-hover);
+}
+
+.blog-card-item:hover .card-thumbnail {
+    transform: scale(1.06);
+    filter: brightness(1.05) saturate(1.15);
+}
+
+.blog-card-item:hover .action-link-text {
+    color: var(--primary-blue-hover);
+}
+
+.blog-card-item:hover .arrow-icon:not(.rotate-arrow) {
+    transform: translateX(4px);
+}
+
+.blog-card-item:hover .rotate-arrow {
+    transform: rotate(-90deg) translateY(-2px);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .top-section-frame {
+        padding: 0 80px;
+    }
+
+    .main-heading-insights {
+        font-size: 52px;
+        line-height: 57px;
+    }
+
+    .canvas-wrapper {
+        padding: 60px 40px;
+    }
+}

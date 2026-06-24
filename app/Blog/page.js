@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from "next/image";
 import React from 'react';
 import './style.css';
@@ -10,6 +11,7 @@ export default function Blog() {
             title: 'LED Sign Ads',
             description: "Design tips, content strategies, and ad templates to maximize your sign's ROI.",
             count: 5,
+            path: 'Blog/ads',
         },
         {
             id: 'software',
@@ -17,6 +19,7 @@ export default function Blog() {
             title: 'Software',
             description: 'Step-by-step guides for Viplex Express, VNNOX Cloud, LED OK, and more.',
             count: 15,
+            path: '#',
         },
         {
             id: 'installation',
@@ -24,6 +27,7 @@ export default function Blog() {
             title: 'Installation',
             description: 'Installation walkthroughs, hardware guides, and mounting tutorials.',
             count: 25,
+            path: '#',
         },
         {
             id: 'case-studies',
@@ -31,6 +35,7 @@ export default function Blog() {
             title: 'Case Studies',
             description: 'Real results from real businesses, ROI stories from LED Sign City customers.',
             count: 15,
+            path: '#',
         },
     ];
 
@@ -98,21 +103,23 @@ export default function Blog() {
                         <div className="row g-4 cards-row-gap">
                             {CATEGORY_CARDS.map((card) => (
                                 <div key={card.id} className="col-12 col-md-6 col-lg-3">
-                                    <div className="category-card-custom">
-                                        <div>
-                                            <div className="icon-overlay-badge">
-                                                <Image src={card.icon} alt={card.title} width={20} height={20} />
+                                    <Link href={card.path} className="text-decoration-none">
+                                        <div className="category-card-custom">
+                                            <div>
+                                                <div className="icon-overlay-badge">
+                                                    <Image src={card.icon} alt={card.title} width={20} height={20} />
+                                                </div>
+                                                <h6 className="card-title-text">{card.title}</h6>
+                                                <p className="card-body-description">{card.description}</p>
                                             </div>
-                                            <h6 className="card-title-text">{card.title}</h6>
-                                            <p className="card-body-description">{card.description}</p>
-                                        </div>
-                                        <div className="d-flex justify-content-between align-items-center mt-3">
-                                            <span className="badge-yellow-overlay">{card.count} articles</span>
-                                            <div className="arrow-indicator">
-                                                <Image src="/arrow.svg" alt="arrow" width={16} height={16} />
+                                            <div className="d-flex justify-content-between align-items-center mt-3">
+                                                <span className="badge-yellow-overlay">{card.count} articles</span>
+                                                <div className="arrow-indicator">
+                                                    <Image src="/arrow.svg" alt="arrow" width={16} height={16} />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             ))}
                         </div>

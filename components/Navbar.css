@@ -57,23 +57,24 @@
 }
 
 .announcement-item {
-    padding-left: 12px;
-    padding-right: 12px;
     color: #FFFFFF;
 }
 
 .custom-star-top {
     font-size: 14px;
     color: #FFFFFF;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .announcement-track {
-    gap: var(--right-side-gap);
-    animation: marqueeLoop 24s linear infinite;
-    padding-left: 12px;
+    display: flex;
+    width: max-content;
+    animation: marqueeLoop 25s linear infinite;
+}
+
+.custom-top-bar-text {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 @keyframes marqueeLoop {
@@ -82,7 +83,7 @@
     }
 
     100% {
-        transform: translate3d(-33.333%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
