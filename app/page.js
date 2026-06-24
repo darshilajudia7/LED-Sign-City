@@ -10,9 +10,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// =========================================================================
 // DATA CONFIGURATIONS
-// =========================================================================
 
 // CARDS
 const CARDS = [
@@ -269,9 +267,7 @@ const faqData = [
   }
 ];
 
-// =========================================================================
 // MAIN HOMEPAGE COMPONENT
-// =========================================================================
 
 export default function Home() {
   const [openIndex, setOpenIndex] = useState(0);
