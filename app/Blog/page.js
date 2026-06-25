@@ -11,7 +11,7 @@ export default function Blog() {
             title: 'LED Sign Ads',
             description: "Design tips, content strategies, and ad templates to maximize your sign's ROI.",
             count: 5,
-            path: 'Blog/ads',
+            path: 'Blog/Ads',
         },
         {
             id: 'software',
@@ -19,7 +19,7 @@ export default function Blog() {
             title: 'Software',
             description: 'Step-by-step guides for Viplex Express, VNNOX Cloud, LED OK, and more.',
             count: 15,
-            path: 'Blog/software',
+            path: 'Blog/Software',
         },
         {
             id: 'installation',
@@ -27,7 +27,7 @@ export default function Blog() {
             title: 'Installation',
             description: 'Installation walkthroughs, hardware guides, and mounting tutorials.',
             count: 25,
-            path: '#',
+            path: 'Blog/Installation',
         },
         {
             id: 'case-studies',

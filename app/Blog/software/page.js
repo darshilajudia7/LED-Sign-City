@@ -10,7 +10,7 @@ export default function LedSignsZoningGuide() {
 
             {/* Hero Banner Section */}
             <section className="hero-banner">
-                <div className="container">
+                <div className="container p-0">
                     <div className="row">
                         <div className="col-12">
                             <div className="breadcrumb-container mb-3">
@@ -28,7 +28,7 @@ export default function LedSignsZoningGuide() {
 
             {/* Content Canvas Section */}
             <section className="legal-article-container">
-                <div className="container">
+                <div className="container p-0">
                     <div className="row">
                         <div className="col-12">
 
