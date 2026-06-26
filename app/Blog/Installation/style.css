@@ -111,8 +111,8 @@
 
 /* Right Side */
 .post-card {
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .post-card__image-wrapper {
@@ -136,6 +136,7 @@
     font-size: 19px;
     line-height: 1.3;
     color: var(--primary-blue);
+    transition: color 0.3s ease;
 }
 
 .post-card__description {
@@ -165,12 +166,16 @@
 
 
 .post-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(23, 82, 189, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(23, 82, 189, 0.15);
 }
 
 .post-card:hover .post-card__img {
     transform: scale(1.06);
+}
+
+.post-card:hover .post-card__title {
+    color: var(--primary-blue-hover);
 }
 
 .post-card:hover .post-card__btn,
@@ -178,10 +183,24 @@
     color: var(--primary-blue-hover);
 }
 
-.post-card__btn:hover .post-card__btn-text {
-    padding-right: 6px;
-}
-
 .post-card__btn:hover .post-card__arrow:not(.post-card__arrow--rotated) {
     transform: translateX(4px);
+}
+
+/* Sidebar Hover Effects */
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+.custom-checkbox-label:hover .checkbox-box--inactive {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+}
+
+.accordion-state-header {
+    transition: opacity 0.2s ease;
+}
+
+.accordion-state-header:hover {
+    opacity: 0.85;
 }

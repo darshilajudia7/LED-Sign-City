@@ -35,7 +35,7 @@ export default function Blog() {
             title: 'Case Studies',
             description: 'Real results from real businesses, ROI stories from LED Sign City customers.',
             count: 15,
-            path: 'blog/case-study',
+            path: 'blog/casestudy',
         },
     ];
 

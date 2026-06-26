@@ -1,18 +1,26 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import "./style.css";
+import "../installation/style.css";
 
-export default function Installation() {
-    // Categories and active filter checkboxes based on the UI layout
+export default function CaseStudies() {
+    // Software Platforms & Solutions filters
     const [categoriesData, setCategoriesData] = useState([
         { name: 'Viper Express', checked: true },
         { name: 'Viper Handy', checked: true },
-        { name: 'Vnnox', checked: true },
+        { name: 'Vnnox Management', checked: true },
         { name: 'Viplex Brightness', checked: true },
     ]);
 
-    // Card grid data mapped with 6 unique, context-aware posts
+    // Deployment Contexts & Technical Focus filters
+    const [hardwareComponentsData, setHardwareComponentsData] = useState([
+        { name: 'Hardware Integration', checked: false },
+        { name: 'Signal & Wiring', checked: false },
+        { name: 'Power Infrastructure', checked: false },
+        { name: 'Display Panels', checked: false },
+    ]);
+
+    // Grid data mapped with 6 unique, context-aware Case Studies
     const caseStudiesPosts = [
         {
             category: 'Programming & Setup',
@@ -62,15 +70,8 @@ export default function Installation() {
         new Array(caseStudiesPosts.length).fill(false)
     );
 
-    const [isProgrammingOpen, setIsProgrammingOpen] = useState(true);
-    const [isLedComponentsOpen, setIsLedComponentsOpen] = useState(false);
-
-    const [ledComponentsData, setLedComponentsData] = useState([
-        { name: 'Hardware', checked: false },
-        { name: 'Wiring', checked: false },
-        { name: 'Power Supply', checked: false },
-        { name: 'Display Panels', checked: false },
-    ]);
+    const [isSoftwareOpen, setIsSoftwareOpen] = useState(true);
+    const [isHardwareOpen, setIsHardwareOpen] = useState(false);
 
     const toggleReadMore = (index) => {
         const updatedExpanded = [...expandedPosts];
@@ -78,30 +79,30 @@ export default function Installation() {
         setExpandedPosts(updatedExpanded);
     };
 
-    const handleCheckboxChange = (index) => {
+    const handleSoftwareCheckboxChange = (index) => {
         const updatedCategories = [...categoriesData];
         updatedCategories[index].checked = !updatedCategories[index].checked;
         setCategoriesData(updatedCategories);
     };
 
-    const handleLedCheckboxChange = (index) => {
-        const updatedCategories = [...ledComponentsData];
-        updatedCategories[index].checked = !updatedCategories[index].checked;
-        setLedComponentsData(updatedCategories);
+    const handleHardwareCheckboxChange = (index) => {
+        const updatedComponents = [...hardwareComponentsData];
+        updatedComponents[index].checked = !updatedComponents[index].checked;
+        setHardwareComponentsData(updatedComponents);
     };
 
     return (
         <>
             <main className="container-fluid p-0 bg-light-gray-base">
 
-                {/* Hero Banner matched exactly to layout */}
+                {/* Hero Banner aligned with Case Studies Theme */}
                 <section className="insights-hero d-flex align-items-center">
                     <div className="container px-3 px-md-0 d-flex flex-column gap-2 text-white">
                         <h1 className="hero-title m-0">
-                            Permits and Zoning
+                            Technical Case Studies
                         </h1>
                         <p className="hero-subtitle m-0">
-                            Choose your state and city below to view LED sign permit requirements.
+                            Explore engineering deployment analyses, hardware optimizations, and digital sign configurations.
                         </p>
                     </div>
                 </section>
@@ -111,7 +112,7 @@ export default function Installation() {
                     <div className="container px-3 px-md-0">
                         <div className="row g-4 justify-content-between">
 
-                            {/* Sidebar Left Navigation Panel */}
+                            {/* Sidebar Filter Navigation Panel */}
                             <aside className="col-lg-4 col-xl-3">
                                 <div className="sidebar-filter-panel p-4">
                                     <div className="sidebar-stack d-flex flex-column gap-4">
@@ -129,22 +130,23 @@ export default function Installation() {
                                                 <input
                                                     type="text"
                                                     id="sidebarSearchInput"
-                                                    placeholder="Search Support Article"
+                                                    placeholder="Search Case Studies"
                                                     className="sidebar-search-input w-100"
                                                 />
                                             </div>
                                             <button className="sidebar-reset-btn btn p-0 text-white border-0 text-start text-decoration-none">
-                                                SHOW ALL
+                                                VIEW ALL PROJECTS
                                             </button>
                                         </div>
 
                                         {/* Dropdown Filters Accordion UI */}
                                         <div className="sidebar-filters-accordion w-100">
-                                            {/* Programming & Setup Section */}
+
+                                            {/* Software Platforms Section */}
                                             <div className="accordion-state-group w-100 mb-4">
                                                 <div
                                                     className="accordion-state-header d-flex justify-content-between align-items-center mb-3 cursor-pointer"
-                                                    onClick={() => setIsProgrammingOpen(!isProgrammingOpen)}
+                                                    onClick={() => setIsSoftwareOpen(!isSoftwareOpen)}
                                                 >
                                                     <div className="state-title-wrap d-flex align-items-center gap-2">
                                                         <Image
@@ -152,21 +154,21 @@ export default function Installation() {
                                                             alt="Toggle Chevron"
                                                             width="16"
                                                             height="16"
-                                                            className={`transition-transform ${!isProgrammingOpen ? 'chevron-icon--collapsed' : ''}`}
+                                                            className={`transition-transform ${!isSoftwareOpen ? 'chevron-icon--collapsed' : ''}`}
                                                         />
-                                                        <span className="state-name-heading fw-medium text-white">Programming & Setup</span>
+                                                        <span className="state-name-heading fw-medium text-white">Software & Tools</span>
                                                     </div>
                                                 </div>
 
                                                 {/* Checkbox Options Loop */}
-                                                {isProgrammingOpen && (
+                                                {isSoftwareOpen && (
                                                     <div className="checkbox-options-stack d-flex flex-column gap-2 ps-3">
                                                         {categoriesData.map((category, index) => (
                                                             <label key={index} className="custom-checkbox-label d-flex align-items-center gap-2 text-white cursor-pointer m-0">
                                                                 <input
                                                                     type="checkbox"
                                                                     checked={category.checked}
-                                                                    onChange={() => handleCheckboxChange(index)}
+                                                                    onChange={() => handleSoftwareCheckboxChange(index)}
                                                                     className="native-checkbox-hidden"
                                                                 />
                                                                 <span className={`custom-checkbox-box rounded ${category.checked ? 'checkbox-box--active' : 'checkbox-box--inactive'}`}>
@@ -193,11 +195,11 @@ export default function Installation() {
                                                 )}
                                             </div>
 
-                                            {/* LED Components & Issues Section */}
+                                            {/* Hardware Infrastructure Section */}
                                             <div className="accordion-state-group w-100">
                                                 <div
                                                     className="accordion-state-header d-flex justify-content-between align-items-center mb-3 cursor-pointer"
-                                                    onClick={() => setIsLedComponentsOpen(!isLedComponentsOpen)}
+                                                    onClick={() => setIsHardwareOpen(!isHardwareOpen)}
                                                 >
                                                     <div className="state-title-wrap d-flex align-items-center gap-2">
                                                         <Image
@@ -205,21 +207,21 @@ export default function Installation() {
                                                             alt="Toggle Chevron"
                                                             width="16"
                                                             height="16"
-                                                            className={`transition-transform ${!isLedComponentsOpen ? 'chevron-icon--collapsed' : ''}`}
+                                                            className={`transition-transform ${!isHardwareOpen ? 'chevron-icon--collapsed' : ''}`}
                                                         />
-                                                        <span className="state-name-heading fw-medium text-white">LED Components & Issues</span>
+                                                        <span className="state-name-heading fw-medium text-white">Hardware Systems</span>
                                                     </div>
                                                 </div>
 
                                                 {/* Checkbox Options Loop */}
-                                                {isLedComponentsOpen && (
+                                                {isHardwareOpen && (
                                                     <div className="checkbox-options-stack d-flex flex-column gap-2 ps-3">
-                                                        {ledComponentsData.map((category, index) => (
+                                                        {hardwareComponentsData.map((category, index) => (
                                                             <label key={index} className="custom-checkbox-label d-flex align-items-center gap-2 text-white cursor-pointer m-0">
                                                                 <input
                                                                     type="checkbox"
                                                                     checked={category.checked}
-                                                                    onChange={() => handleLedCheckboxChange(index)}
+                                                                    onChange={() => handleHardwareCheckboxChange(index)}
                                                                     className="native-checkbox-hidden"
                                                                 />
                                                                 <span className={`custom-checkbox-box rounded ${category.checked ? 'checkbox-box--active' : 'checkbox-box--inactive'}`}>
@@ -251,7 +253,7 @@ export default function Installation() {
                                 </div>
                             </aside>
 
-                            {/* Cards Grid Right Panel */}
+                            {/* Case Studies Grid Right Panel */}
                             <main className="col-lg-8 col-xl-9">
                                 <div className="row row-cols-1 row-cols-md-2 g-4">
                                     {caseStudiesPosts.map((post, idx) => {
@@ -294,7 +296,7 @@ export default function Installation() {
                                                                 onClick={() => toggleReadMore(idx)}
                                                                 className="post-card__btn btn btn-link p-0 text-decoration-none fw-semibold border-0 d-inline-flex align-items-center"
                                                             >
-                                                                <span className="post-card__btn-text me-1">{isExpanded ? "Show Less" : "Read More"}</span>
+                                                                <span className="post-card__btn-text me-1">{isExpanded ? "Minimize Summary" : "Read Overview"}</span>
                                                                 <Image
                                                                     src="/b_arrow.svg"
                                                                     alt="Arrow Icon"
