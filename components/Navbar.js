@@ -66,7 +66,7 @@ const Navbar = () => {
                                         Shop Displays
                                     </button>
                                     <ul className="dropdown-menu shadow border-0 rounded-3 p-2 custom-mobile-dropdown">
-                                        <li><Link href="#" className="dropdown-item rounded-2">Outdoor LED Displays</Link></li>
+                                        <li><Link href="/outdoor_product" className="dropdown-item rounded-2">Outdoor LED Displays</Link></li>
                                         <li><Link href="#" className="dropdown-item rounded-2">Indoor LED Signs</Link></li>
                                     </ul>
                                 </li>
