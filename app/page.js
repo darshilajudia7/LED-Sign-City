@@ -52,7 +52,7 @@ const INDUSTRIES = [
     description: "Share community updates, events, missions, and causes with programmable displays that reach far and wide.",
     linkText: "Shop Public & Non-Profit Signs",
     imgSrc: "/serve-1.png",
-    link: "/industries/public-nonprofit"
+    link: "#"
   },
   {
     id: "retail-businesses",
@@ -60,7 +60,7 @@ const INDUSTRIES = [
     description: "Drive foot traffic with instant price changes, promotions, specials, and eye-catching messages that convert customers.",
     linkText: "Shop Retail & Business Signs",
     imgSrc: "/serve-2.png",
-    link: "/industries/retail-businesses"
+    link: "#"
   },
   {
     id: "partners-resellers",
@@ -68,7 +68,7 @@ const INDUSTRIES = [
     description: "White-label options, bulk pricing, and easy integration for sign shops, installers, or affiliates to expand your offerings.",
     linkText: "Shop Partner & Resellers Signs",
     imgSrc: "/serve-3.png",
-    link: "/industries/partners-resellers"
+    link: "#"
   },
   {
     id: "custom-architecture",
@@ -76,7 +76,7 @@ const INDUSTRIES = [
     description: "Tailor-made structural screen specs built natively to dynamically align into bespoke geometric structures.",
     linkText: "Shop Custom Signs",
     imgSrc: "/serve-4.png",
-    link: "/industries/custom-architecture"
+    link: "#"
   }
 ];
 
@@ -289,7 +289,7 @@ export default function Home() {
             <div className="col-lg-7 col-12">
               <div className="hero-content-wrapper">
                 <h1 className="hero-title mb-3">
-                  Let Your Sign Do More.<br className="d-none d-sm-inline" />
+                  Let Your Sign Do More.<br />
                   Control the Conversation.
                 </h1>
 
@@ -299,14 +299,14 @@ export default function Home() {
 
                 <div className="hero-actions-group mb-4 justify-content-center justify-content-lg-start">
                   <Link href="#" className="btn btn-custom-yellow shadow-sm">
-                    <span className="custom-star-btn">✦</span>
+                    <Image src="/star.svg" alt="star" width="24" height="24" />
                     Build Your Custom Sign Now
                   </Link>
 
                   <Link href="#how-it-works" className="see-how-link text-white text-decoration-none">
                     See How XIGNZ Works
                     <span className="arrow-icon ms-2">
-                      <i className="bi bi-arrow-right"></i>
+                      <Image src="/w_arrow.svg" alt="arrow" width="24" height="24" />
                     </span>
                   </Link>
                 </div>
@@ -314,8 +314,8 @@ export default function Home() {
                 <div className="star-rating-section justify-content-center justify-content-lg-start">
                   <div className="star-group me-2">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="star">
-                        <i className="bi bi-star-fill"></i>
+                      <span key={i} className="me-1">
+                        <Image src="/rating.svg" alt="star" width="20" height="20" />
                       </span>
                     ))}
                   </div>
@@ -396,7 +396,7 @@ export default function Home() {
                         <Link href={item.link} className="card-link-custom">
                           {item.linkText}
                         </Link>
-                        <i className="bi bi-arrow-right arrow-icon-spec"></i>
+                        <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" />
                       </div>
                     </div>
                   </div>
@@ -407,10 +407,10 @@ export default function Home() {
             {/* Arrow */}
             <div className="slider-arrows-row justify-content-center justify-content-md-end mt-4">
               <button className="arrow-btn-spec industries-prev-arrow" aria-label="Previous Slide">
-                <i className="bi bi-arrow-left arrow-icon-spec"></i>
+                <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" className="rotate-180" />
               </button>
               <button className="arrow-btn-spec industries-next-arrow" aria-label="Next Slide">
-                <i className="bi bi-arrow-right arrow-icon-spec"></i>
+                <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" />
               </button>
             </div>
           </div>
@@ -465,7 +465,7 @@ export default function Home() {
                     <div className="card-content">
                       <h3>{card.title}</h3>
                       <Link href={card.link}>
-                        {card.button} <i className="bi bi-arrow-right ms-1"></i>
+                        {card.button} <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" />
                       </Link>
                     </div>
                   </div>
@@ -476,10 +476,10 @@ export default function Home() {
             {/* Slider Navigation Buttons */}
             <div className="slider-buttons justify-content-center justify-content-md-end mt-4">
               <button className="conversation-prev" aria-label="Previous Slide">
-                <i className="bi bi-arrow-left"></i>
+                <Image src="/arrow.svg" alt="arrow" width="20" height="20" className="rotate-180" />
               </button>
               <button className="conversation-next" aria-label="Next Slide">
-                <i className="bi bi-arrow-right"></i>
+                <Image src="/arrow.svg" alt="arrow" width="20" height="20" />
               </button>
             </div>
           </div>
@@ -564,12 +564,12 @@ export default function Home() {
 
                 <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
                   <button className="btn-custom-yellow px-4 py-2">
-                    <span className="custom-star-btn">✦</span>
+                    <Image src="/star.svg" alt="star" width="24" height="24" />
                     Build Your Custom Sign Now
                   </button>
 
                   <Link href="#" className="benefits-cta-link ms-md-3">
-                    See How XIGNZ Works <i className="bi bi-arrow-right ms-2"></i>
+                    See How XIGNZ Works <span className="arrow-icon"><Image src="/w_arrow.svg" alt="arrow" width="24" height="24" /></span>
                   </Link>
                 </div>
               </div>
@@ -696,8 +696,8 @@ export default function Home() {
                 ))}
 
                 <div className="pt-2">
-                  <button className="btn-custom-yellow px-4 py-2 w-sm-auto">
-                    <span className="custom-star-btn">✦</span>
+                  <button className="btn-custom-yellow px-4 py-2 w-sm-auto ">
+                    <Image src="/star.svg" alt="star" width="24" height="24" />
                     Build Your Custom LED Sign
                   </button>
                 </div>
@@ -766,7 +766,7 @@ export default function Home() {
                           <div>
                             <div className="reviews-stars d-flex gap-1 mb-2">
                               {[...Array(5)].map((_, i) => (
-                                <i key={i} className="bi bi-star-fill"></i>
+                                <Image key={i} src="/rating.svg" alt="star" width="20" height="20" />
                               ))}
                             </div>
                             <p className="reviews-card-text mb-0">{item.reviewText}</p>
@@ -794,10 +794,10 @@ export default function Home() {
                   <div className="col-12 d-flex justify-content-center justify-content-md-end">
                     <div className="reviews-arrows d-flex gap-2">
                       <button className="reviews-arrow-btn reviews-arrow-prev" aria-label="Previous slide">
-                        <i className="bi bi-arrow-left"></i>
+                        <Image src="/arrow.svg" alt="arrow" width="18" height="18" className="rotate-180" />
                       </button>
                       <button className="reviews-arrow-btn reviews-arrow-next" aria-label="Next slide">
-                        <i className="bi bi-arrow-right"></i>
+                        <Image src="/arrow.svg" alt="arrow" width="18" height="18" />
                       </button>
                     </div>
                   </div>
@@ -807,7 +807,10 @@ export default function Home() {
                 <div className="row">
                   <div className="col-12 d-flex justify-content-center">
                     <Link href="#" className="reviews-cta-link fw-medium text-decoration-none">
-                      Want to read all movie reviews? <i className="bi bi-arrow-right ms-2"></i>
+                      Want to read all movie reviews?
+                      <span className="arrow-icon">
+                        <Image src="/b_arrow.svg" alt="arrow" width="18" height="18" />
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -886,10 +889,10 @@ export default function Home() {
               {/* Navigation */}
               <div className="works-arrows d-flex gap-3 justify-content-center justify-content-md-end mt-4">
                 <button className="works-arrow-btn works-prev" aria-label="Previous slide">
-                  <i className="bi bi-arrow-left"></i>
+                  <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" className="rotate-180" />
                 </button>
                 <button className="works-arrow-btn works-next" aria-label="Next slide">
-                  <i className="bi bi-arrow-right"></i>
+                  <Image src="/w_arrow.svg" alt="arrow" width="18" height="18" />
                 </button>
               </div>
 
@@ -900,12 +903,12 @@ export default function Home() {
             <div className="col-12 text-center">
               <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
                 <button className="works-action-btn btn bg-white text-black border fw-medium px-4 py-2">
-                  <span className="custom-star-btn me-2">✦</span>
+                  <Image src="/w_star.svg" alt="star" width="25" height="25" />
                   Inspired? Join our growing list of happy customers.
                 </button>
                 <Link href="#" className="works-action-link text-white text-decoration-none fw-medium px-4 py-2 d-inline-flex align-items-center gap-2">
                   Want to see all past projects?
-                  <i className="bi bi-arrow-right"></i>
+                  <span className="arrow-icon"><Image src="/w_arrow.svg" alt="arrow" width="24" height="24" /></span>
                 </Link>
               </div>
             </div>
@@ -963,7 +966,9 @@ export default function Home() {
                         className={`faq-answer-pane ${isOpen ? 'open' : ''}`}
                         style={{
                           maxHeight: isOpen ? '500px' : '0px',
-                          marginTop: isOpen ? '15px' : '0px'
+                          marginTop: isOpen ? '15px' : '0px',
+                          opacity: isOpen ? 1 : 0,
+                          transform: isOpen ? 'translateY(0)' : 'translateY(-6px)'
                         }}
                       >
                         <p className="faq-answer-text mb-0">{item.answer}</p>
@@ -980,11 +985,7 @@ export default function Home() {
             <div className="col-12 d-flex flex-column align-items-center gap-2">
               <Link href="#" className="faq-cta-btn fw-medium text-decoration-none px-4 py-2 rounded">
                 Don't see your question?
-                <span className="faq-cta-arrow ms-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </span>
+                <span className="arrow-icon"><Image src="/b_arrow.svg" alt="arrow" width="18" height="18" /></span>
               </Link>
               <p className="faq-footer-line mb-0 mt-1">We're happy to answer directly—reach out anytime.</p>
             </div>

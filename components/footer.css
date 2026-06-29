@@ -79,9 +79,12 @@
     max-width: 248px;
 }
 
-.footer-btn-primary:hover,
-.footer-btn-secondary:hover {
+.footer-btn-primary:hover {
     transform: translateY(-1px);
+}
+
+.footer-btn-secondary:hover .arrow-icon {
+    transform: translateX(6px);
 }
 
 .footer-star-icon,
@@ -92,7 +95,6 @@
 .footer-blue-band {
     background: var(--blue-primary);
     width: 100%;
-    padding: 180px 0 40px 0;
     position: relative;
     overflow: hidden;
 }
@@ -129,7 +131,14 @@
     color: var(--white-clean);
     text-decoration: none;
     opacity: 0.85;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-col-link:hover,
+.footer-col-link:focus-visible {
+    color: var(--white-clean);
+    opacity: 1;
+    transform: translateX(3px);
 }
 
 .footer-meta-row {
@@ -157,6 +166,7 @@
 
 .footer-social-label {
     font-size: 15px;
+    margin-top: 10px;
     color: var(--white-clean);
 }
 
@@ -171,6 +181,19 @@
     text-decoration: none;
     font-size: 18px;
     transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-icon:hover,
+.footer-social-icon:focus-visible {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.footer-arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
 }
 
 /* Logo */

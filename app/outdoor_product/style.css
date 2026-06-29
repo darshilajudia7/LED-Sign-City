@@ -1465,11 +1465,19 @@
     border-radius: 0px 0px 12px 12px;
     box-sizing: border-box;
     overflow: hidden;
-    height: auto;
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .tableBackgroundClosed {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .tableRow {
@@ -1889,6 +1897,7 @@
     align-self: stretch;
     flex-grow: 0;
     overflow: hidden;
+    transition: height 0.3s ease, box-shadow 0.3s ease;
 }
 
 .setup-btn-collapsed,
@@ -1931,6 +1940,7 @@
     align-self: stretch;
     flex-grow: 0;
     overflow: hidden;
+    animation: setupAccordionOpen 0.3s ease;
 }
 
 .setup-btn-expanded {
@@ -1955,6 +1965,7 @@
     flex: none;
     align-self: stretch;
     flex-grow: 0;
+    animation: setupContentFade 0.3s ease;
 }
 
 .setup-content-inner-stack {
@@ -2140,11 +2151,10 @@
 
 .general-faq-item-row {
     width: 1351px;
-    height: 59px;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--color-gray-12);
-    transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .general-faq-item-row.expanded {
@@ -2191,12 +2201,14 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.35s ease-out, opacity 0.25s ease;
+    transform: translateY(-4px);
+    transition: max-height 0.35s ease-out, opacity 0.25s ease, transform 0.25s ease;
 }
 
 .general-faq-panel-collapse.show {
     max-height: 600px;
     opacity: 1;
+    transform: translateY(0);
 }
 
 .general-faq-panel-body {
@@ -2214,6 +2226,28 @@
     line-height: 25px;
     color: var(--color-text-gray);
     margin: 0;
+}
+
+@keyframes setupAccordionOpen {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes setupContentFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Contact Section */

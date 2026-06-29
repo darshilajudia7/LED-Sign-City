@@ -15,14 +15,14 @@ export default function Footer() {
                     </h3>
                     <div className="footer-cta-button-row d-flex flex-wrap justify-content-center">
                         <button type="button" className="footer-btn-primary">
-                            <span className="footer-star-icon">✦</span>
+                            <Image src="/star.svg" alt="star" width="23" height="23" />
                             Build Your Custom Sign Now
                         </button>
 
                         <button type="button" className="footer-btn-secondary">
                             See How XIGNZ Works
                             <span className="footer-arrow-icon" aria-hidden="true">
-                                <i className="bi bi-arrow-right"></i>
+                                <span className="arrow-icon"><Image src="/arrow.svg" alt="arrow" width="20" height="20" /></span>
                             </span>
                         </button>
                     </div>
@@ -99,20 +99,20 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className="footer-social-block d-flex flex-column">
+                        <div className="footer-social-block d-flex flex-row">
                             <span className="footer-social-label">We’re on Social Media</span>
                             <div className="footer-social-icons-row d-flex align-items-center">
                                 <a href="#" className="footer-social-icon d-inline-flex align-items-center justify-content-center" aria-label="Facebook">
-                                    <i className="bi bi-facebook"></i>
+                                    <Image src="/header_footer/facebook.svg" alt="facebook" width="25" height="25" />
                                 </a>
                                 <a href="#" className="footer-social-icon d-inline-flex align-items-center justify-content-center" aria-label="Twitter">
-                                    <i className="bi bi-twitter-x"></i>
+                                    <Image src="/header_footer/twitter.svg" alt="twitter" width="25" height="25" />
                                 </a>
                                 <a href="#" className="footer-social-icon d-inline-flex align-items-center justify-content-center" aria-label="LinkedIn">
-                                    <i className="bi bi-linkedin"></i>
+                                    <Image src="/header_footer/linkdin.svg" alt="linkdin" width="25" height="25" />
                                 </a>
                                 <a href="#" className="footer-social-icon d-inline-flex align-items-center justify-content-center" aria-label="YouTube">
-                                    <i className="bi bi-youtube"></i>
+                                    <Image src="/header_footer/youtube.svg" alt="youtube" width="25" height="25" />
                                 </a>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ export default function Footer() {
                 {/* Logo */}
                 <div className="footer-wordmark-group mx-auto d-flex justify-content-center" aria-hidden="true">
                     <Image
-                        src="/LED-logo.png"
+                        src="/header_footer/LED-logo.png"
                         alt="LED Sign City Large Brand Wordmark"
                         width={1351}
                         height={102}

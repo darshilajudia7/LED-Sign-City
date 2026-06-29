@@ -28,7 +28,7 @@ const Navbar = () => {
                                 {announcements.map((text, j) => (
                                     <React.Fragment key={j}>
                                         <span className="announcement-item">{text}</span>
-                                        <span className="custom-star-top">✦</span>
+                                        <Image src="/w_star.svg" alt="star" width="14" height="14" />
                                     </React.Fragment>
                                 ))}
                             </div>
@@ -98,30 +98,31 @@ const Navbar = () => {
 
                             <div className="d-none d-lg-flex align-items-center gap-4 icon-group-desktop">
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Search">
-                                    <i className="bi bi-search"></i>
+                                    <Image src="/header_footer/search.svg" alt="search" width="24" height="24" />
                                 </button>
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Profile">
-                                    <i className="bi bi-person"></i>
+                                    <Image src="/header_footer/profile.svg" alt="profile" width="24" height="24" />
                                 </button>
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Cart">
-                                    <i className="bi bi-cart"></i>
+                                    <Image src="/header_footer/cart.svg" alt="cart" width="24" height="24" />
                                 </button>
                             </div>
 
                             <div className="d-flex d-lg-none align-items-center gap-2 gap-sm-3 icon-group-mobile">
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Search">
-                                    <i className="bi bi-search"></i>
+                                    <Image src="/header_footer/search.svg" alt="search" width="24" height="24" />
                                 </button>
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Profile">
-                                    <i className="bi bi-person"></i>
+                                    <Image src="/header_footer/profile.svg" alt="profile" width="24" height="24" />
                                 </button>
                                 <button className="btn p-0 border-0 d-inline-flex align-items-center custom-icon-btn" aria-label="Cart">
-                                    <i className="bi bi-cart"></i>
+                                    <Image src="/header_footer/cart.svg" alt="cart" width="24" height="24" />
                                 </button>
                             </div>
 
                             <Link href="#" className="btn text-dark custom-yellow-btn">
-                                <span className="custom-star-btn">✦</span> <span className="btn-text">Build Your Sign</span>
+                                <Image src="/star.svg" alt="star" width="20" height="20" />
+                                <span className="btn-text">Build Your Sign</span>
                             </Link>
 
                             {/* Mobile Toggle */}

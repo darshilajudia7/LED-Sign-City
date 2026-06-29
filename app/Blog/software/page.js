@@ -67,7 +67,7 @@ export default function LedSignsZoningGuide() {
                             <div className="article-section-spacing">
                                 <div className="responsive-image-frame">
                                     <Image
-                                        src="/software.png"
+                                        src="/blog/software.png"
                                         alt="One-Stop Cloud Platform Dashboard"
                                         width={626}
                                         height={433}

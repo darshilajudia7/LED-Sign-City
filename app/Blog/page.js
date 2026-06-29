@@ -7,7 +7,7 @@ export default function Blog() {
     const CATEGORY_CARDS = [
         {
             id: 'ads',
-            icon: '/ad.svg',
+            icon: '/blog/ad.svg',
             title: 'LED Sign Ads',
             description: "Design tips, content strategies, and ad templates to maximize your sign's ROI.",
             count: 5,
@@ -15,7 +15,7 @@ export default function Blog() {
         },
         {
             id: 'software',
-            icon: '/sf.svg',
+            icon: '/blog/software.svg',
             title: 'Software',
             description: 'Step-by-step guides for Viplex Express, VNNOX Cloud, LED OK, and more.',
             count: 15,
@@ -23,7 +23,7 @@ export default function Blog() {
         },
         {
             id: 'installation',
-            icon: '/inst.svg',
+            icon: '/blog/installation.svg',
             title: 'Installation',
             description: 'Installation walkthroughs, hardware guides, and mounting tutorials.',
             count: 25,
@@ -31,7 +31,7 @@ export default function Blog() {
         },
         {
             id: 'case-studies',
-            icon: '/case.svg',
+            icon: '/blog/case_study.svg',
             title: 'Case Studies',
             description: 'Real results from real businesses, ROI stories from LED Sign City customers.',
             count: 15,
@@ -140,7 +140,7 @@ export default function Blog() {
                                             <p className="software-card-desc">{file.description}</p>
                                         </div>
                                         <a href={file.link} className="download-action-link">
-                                            <Image src="/download.svg" alt="download" width={24} height={24} />
+                                            <Image src="/blog/download.svg" alt="download" width={24} height={24} />
                                             Download
                                         </a>
                                     </div>

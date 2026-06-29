@@ -8,7 +8,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --brand-blue: #1e56b8;
-  --brand-accent-blue: #0d6efd;
+  --brand-accent-blue: #1752BD;
 
   --brand-yellow: #ffb703;
   --brand-yellow-hover: #fcab00;
@@ -93,13 +93,16 @@ body {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 16px;
+  gap: 10px;
   white-space: nowrap;
-  transition: all var(--transition-smooth);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 .btn-custom-yellow:hover {
   background-color: var(--brand-yellow-hover);
   color: var(--color-black) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .see-how-link {
@@ -111,17 +114,17 @@ body {
   transition: opacity var(--transition-smooth);
 }
 
-.see-how-link:hover {
-  opacity: 0.85;
-}
-
 .arrow-icon {
   display: inline-flex;
   font-size: 18px;
   transition: transform var(--transition-smooth);
 }
 
-.see-how-link:hover .arrow-icon {
+.see-how-link:hover .arrow-icon,
+.benefits-cta-link:hover .arrow-icon,
+.works-action-link:hover .arrow-icon,
+.reviews-cta-link:hover .arrow-icon,
+.faq-cta-btn:hover .arrow-icon {
   transform: translateX(6px);
 }
 
@@ -129,12 +132,6 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.star-group .star {
-  color: var(--brand-yellow);
-  font-size: 16px;
-  margin: 2px;
 }
 
 .rating-score {
@@ -156,8 +153,6 @@ body {
   max-width: 545px;
 }
 
-
-
 /* Industries Section */
 .industries-section {
   padding: 80px 0;
@@ -171,6 +166,10 @@ body {
   font-size: clamp(28px, 4vw, var(--fs-section-title));
   line-height: var(--lh-section-title);
   color: var(--color-white);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
 
 .section-paragraph-custom {
@@ -188,6 +187,12 @@ body {
   border-radius: var(--border-radius-card);
   overflow: hidden;
   background: var(--color-black);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.industry-card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
 }
 
 .industry-card-custom::after {
@@ -208,6 +213,11 @@ body {
 .card-img-wrapper img {
   object-fit: cover;
   opacity: 0.85;
+  transition: transform 0.45s ease;
+}
+
+.industry-card-custom:hover .card-img-wrapper img {
+  transform: scale(1.06);
 }
 
 .card-content-custom {
@@ -271,12 +281,6 @@ body {
   transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
 }
 
-.arrow-icon-spec {
-  font-size: 18px;
-  color: var(--color-white);
-}
-
-
 
 /* Conversation Section */
 .conversation-section {
@@ -308,10 +312,21 @@ body {
   overflow: hidden;
   border-radius: var(--border-radius-card);
   background: var(--color-black);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.conversation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
   object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.conversation-card:hover .card-image {
+  transform: scale(1.06);
 }
 
 .overlay {
@@ -343,16 +358,18 @@ body {
 .card-content a {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   color: var(--color-white);
   text-decoration: none;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--fs-card-link);
-  transition: opacity var(--transition-smooth);
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .card-content a:hover {
-  opacity: 0.85;
+  opacity: 0.9;
+  transform: translateX(3px);
 }
 
 .slider-buttons {
@@ -429,12 +446,14 @@ body {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: color var(--transition-smooth);
+  gap: 6px;
+  transition: color var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .showcase-feature-link:hover {
   color: var(--brand-blue);
   text-decoration: underline;
+  transform: translateX(3px);
 }
 
 .showcase-visuals-column {
@@ -482,13 +501,9 @@ body {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   padding: 10px 20px;
-  transition: opacity var(--transition-smooth);
-}
-
-.benefits-cta-link:hover {
-  opacity: 0.85;
-  color: var(--color-white);
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .benefits-content-block {
@@ -536,12 +551,14 @@ body {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: color var(--transition-smooth);
+  gap: 6px;
+  transition: color var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .benefits-card-link:hover {
   color: var(--brand-blue);
   text-decoration: underline;
+  transform: translateX(3px);
 }
 
 .benefits-video-wrapper {
@@ -623,11 +640,13 @@ body {
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color var(--transition-smooth);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 .btn-custom-yellow:hover {
   background-color: var(--brand-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .process-image-frame {
@@ -686,12 +705,6 @@ body {
   border: 0;
 }
 
-.reviews-stars i {
-  font-size: 20px;
-  color: var(--brand-yellow);
-  line-height: 1;
-}
-
 .reviews-card-text {
   font-size: 16px;
   line-height: 1.4;
@@ -724,11 +737,8 @@ body {
   color: var(--brand-blue);
   display: inline-flex;
   margin-top: 50px;
-  transition: color var(--transition-smooth);
-}
-
-.reviews-cta-link:hover {
-  color: var(--brand-accent-blue);
+  gap: 5px;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .reviews-arrow-btn {
@@ -771,6 +781,12 @@ body {
 .works-card {
   border-radius: var(--border-radius-card);
   min-height: 550px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.works-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
 }
 
 .works-card::after {
@@ -785,6 +801,14 @@ body {
 .works-card-content {
   inset: auto 0 0 0;
   z-index: 2;
+}
+
+.works-card-img {
+  transition: transform 0.45s ease;
+}
+
+.works-card:hover .works-card-img {
+  transform: scale(1.06);
 }
 
 .works-card-title {
@@ -818,22 +842,34 @@ body {
 .works-action-btn {
   height: 44px;
   border-radius: 8px;
+  gap: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--color-black) !important;
   font-size: 16px;
-  transition: background-color var(--transition-smooth);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.works-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  color: var(--color-black) !important;
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
 .works-action-link {
   height: 44px;
   border-radius: 8px;
   font-size: 16px;
-  transition: background-color var(--transition-smooth), opacity var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), border-color var(--transition-smooth), color var(--transition-smooth);
 }
-
-
 
 /* FAQ Section */
 .faq-section {
@@ -877,7 +913,8 @@ body {
 
 .faq-answer-pane {
   overflow: hidden;
-  transition: max-height var(--transition-smooth), margin-top var(--transition-smooth);
+  transition: max-height 0.35s ease, margin-top 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
+  will-change: max-height, opacity, transform;
 }
 
 .faq-answer-text {
@@ -890,14 +927,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   color: var(--brand-accent-blue);
   font-size: var(--fs-card-link);
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
-}
-
-.faq-cta-btn:hover {
-  background-color: rgba(13, 110, 253, 0.05);
-  color: var(--brand-blue);
 }
 
 .faq-cta-arrow {

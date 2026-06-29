@@ -31,7 +31,7 @@ export default function Ads() {
             date: 'Feb 14, 2026',
             title: 'High-Refresh Rate Controller Modules for Outdoor Units',
             description: 'An in-depth look into synchronous controller systems that maximize diode refresh cycles. Ideal for maintaining crisp content playback under direct, intense afternoon sunlight.',
-            imageSrc: '/ads_temp.png'
+            imageSrc: '/blog/ads_temp.png'
         },
         {
             id: 3,
@@ -39,7 +39,7 @@ export default function Ads() {
             date: 'Mar 02, 2026',
             title: 'Structural Mounting Guide: Secure Roadside Anchoring',
             description: 'A complete breakdown of wind-load calculations and foundational footing requirements for standard roadside digital frameworks. Ensure safety clearances match local zoning mandates.',
-            imageSrc: '/ads_temp.png'
+            imageSrc: '/blog/ads_temp.png'
         },
         {
             id: 4,
@@ -47,7 +47,7 @@ export default function Ads() {
             date: 'Apr 18, 2026',
             title: 'Thermal Management & Cooling in Compact Enclosures',
             description: 'Explore active vs. passive ventilation setups for sealed outdoor sign cabinets. Prevent premature diode degradation by optimizing internal ambient airflow channels effectively.',
-            imageSrc: '/ads_temp.png'
+            imageSrc: '/blog/ads_temp.png'
         },
         {
             id: 5,
@@ -55,7 +55,7 @@ export default function Ads() {
             date: 'May 22, 2026',
             title: 'Optimal Pixel Pitch Selection for Commercial Storefronts',
             description: 'How to balance viewing distance and resolution requirements when picking hardware configurations. Discover why smaller custom profiles demand tight spacing configurations.',
-            imageSrc: '/ads_temp.png'
+            imageSrc: '/blog/ads_temp.png'
         },
         {
             id: 6,
@@ -63,7 +63,7 @@ export default function Ads() {
             date: 'Jun 11, 2026',
             title: 'Smart Dimming Sensors: Reducing Off-Peak Power Draw',
             description: 'Integrate automated ambient light sensors to dynamically adjust sign nit outputs. Drastically lower operating overhead costs while complying with nocturnal light pollution rules.',
-            imageSrc: '/ads_temp.png'
+            imageSrc: '/blog/ads_temp.png'
         }
     ];
 

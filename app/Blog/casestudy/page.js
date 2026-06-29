@@ -27,42 +27,42 @@ export default function CaseStudies() {
             date: 'Jun 9, 2026',
             title: 'Cloud Publishing Framework Setup with Vnnox',
             description: 'A step-by-step walkthrough detailing how to configure remote cloud synchronous publishing on a multi-screen commercial node using the Vnnox management platform.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         },
         {
             category: 'LED Sign Ads',
             date: 'May 24, 2026',
             title: '2×4 LED Sign Specifications - Compact Roadside Display',
             description: 'The 2×4 LED Sign is a compact, outdoor ready digital display built for high-visibility messaging in a smaller footprint. A strong fit for storefronts, entrances, and drive lanes.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         },
         {
             category: 'Hardware & Maintenance',
             date: 'May 12, 2026',
             title: 'Diagnosing Power Supply Failures on Perimeter Boards',
             description: 'An architectural breakdown on isolation workflows, checking DC output parameters, and replacing faulty switching power supplies without taking the entire ribbon display offline.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         },
         {
             category: 'Viper Software',
             date: 'Apr 28, 2026',
             title: 'Real-time Playlist Scheduling via Viper Express',
             description: 'Optimizing local network broadcast cycles using Viper Express. Learn how to sequence programmatic dayparting rules and cache heavy media files directly onto the asynchronous player.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         },
         {
             category: 'Wiring & Signal',
             date: 'Mar 15, 2026',
             title: 'Resolving Data Cascade Drops in Hub Board Connections',
             description: 'Addressing structural signal attenuation issues. This guide covers testing flat ribbon cables, identifying cold solder joints, and utilizing differential signal boosters for long runs.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         },
         {
             category: 'Display Panels',
             date: 'Feb 02, 2026',
             title: 'Outdoor Calibration: Matching Brightness & Color Profiles',
             description: 'Utilizing Viplex Brightness alongside smart sensor arrays to fine-tune white balance levels, avoiding pixelation, and maintaining optimal nit output across aging module batches.',
-            imageUrl: '/ads_temp.png'
+            imageUrl: '/blog/ads_temp.png'
         }
     ];
 
@@ -121,7 +121,7 @@ export default function CaseStudies() {
                                         <div className="sidebar-search-group w-100">
                                             <div className="sidebar-search-bar d-flex align-items-center px-3 mb-2">
                                                 <Image
-                                                    src="/search.svg"
+                                                    src="/blog/search.svg"
                                                     alt="Search Icon"
                                                     width="16"
                                                     height="16"
@@ -174,14 +174,14 @@ export default function CaseStudies() {
                                                                 <span className={`custom-checkbox-box rounded ${category.checked ? 'checkbox-box--active' : 'checkbox-box--inactive'}`}>
                                                                     {category.checked ? (
                                                                         <Image
-                                                                            src="/checked.svg"
+                                                                            src="/blog/checked.svg"
                                                                             alt="Checked Status"
                                                                             width="14"
                                                                             height="14"
                                                                         />
                                                                     ) : (
                                                                         <Image
-                                                                            src="/unchecked.svg"
+                                                                            src="/blog/unchecked.svg"
                                                                             alt="Unchecked Status"
                                                                             width="14"
                                                                             height="14"
