@@ -1,17 +1,14 @@
-@import "bootstrap-icons/font/bootstrap-icons.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
-
 :root {
-  --font-heading: 'Anek Latin', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-anek), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
 
   --background: #ffffff;
   --foreground: #171717;
   --brand-blue: #1e56b8;
   --brand-accent-blue: #1752BD;
 
-  --brand-yellow: #ffb703;
-  --brand-yellow-hover: #fcab00;
+  --brand-yellow: #FFCC02;
+  --brand-yellow-hover: #e6b802;
 
   --color-white: #ffffff;
   --color-black: #000000;
@@ -50,14 +47,19 @@ body {
   min-height: 100vh;
   padding: 120px 0 60px 0;
   color: var(--color-white);
-  background: url('/bg.png') no-repeat center center / cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero-content-wrapper {
   max-width: 640px;
   margin: 0 auto;
 }
-
 
 .hero-title {
   font-family: var(--font-heading);
@@ -91,11 +93,17 @@ body {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 550 !important;
+  font-style: medium;
   font-size: 16px;
   gap: 10px;
   white-space: nowrap;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+.btn-custom-yellow img,
+.btn-custom-yellow svg {
+  transition: transform var(--transition-smooth);
 }
 
 .btn-custom-yellow:hover {
@@ -103,6 +111,11 @@ body {
   color: var(--color-black) !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.btn-custom-yellow:hover img,
+.btn-custom-yellow:hover svg {
+  transform: rotate(180deg);
 }
 
 .see-how-link {
@@ -268,19 +281,47 @@ body {
   gap: 16px;
 }
 
-.arrow-btn-spec {
+.arrow-btn-spec,
+.reviews-arrow-btn,
+.works-arrow-btn,
+.slider-buttons button,
+.conversation-prev,
+.conversation-next,
+.reviews-arrow-prev,
+.reviews-arrow-next,
+.works-prev,
+.works-next {
   width: 40px;
   height: 40px;
-  background: transparent;
+  border-radius: 50%;
+  background-color: transparent;
   border: none;
-  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth), color var(--transition-smooth);
 }
 
+.arrow-btn-spec:hover,
+.reviews-arrow-btn:hover,
+.works-arrow-btn:hover,
+.slider-buttons button:hover,
+.works-prev:hover,
+.works-next:hover {
+  background-color: rgba(255, 255, 255, 0.26);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.conversation-next:hover,
+.conversation-prev:hover,
+.reviews-arrow-prev:hover,
+.reviews-arrow-next:hover {
+  background-color: #3b82f6 !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15) !important;
+}
 
 /* Conversation Section */
 .conversation-section {
@@ -852,12 +893,22 @@ body {
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth), border-color var(--transition-smooth);
 }
 
+.works-action-btn img,
+.works-action-btn svg {
+  transition: transform var(--transition-smooth);
+}
+
 .works-action-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   color: var(--color-black) !important;
   border-color: rgba(0, 0, 0, 0.14);
+}
+
+.works-action-btn:hover img,
+.works-action-btn:hover svg {
+  transform: rotate(180deg);
 }
 
 .works-action-link {

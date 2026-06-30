@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
     --blue-primary: #1752BD;
-    --yellow-accent: #FFCC02;
+    --yellow-accent: #e6b802;
     --dark-charcoal: #101010;
     --white-clean: #FFFFFF;
-    --font-inter: 'Inter', sans-serif;
+    --font-inter: var(--font-inter), sans-serif;
     --max-content-width: 1352px;
 }
 
@@ -70,6 +68,24 @@
     color: var(--dark-charcoal);
     width: 100%;
     max-width: 292px;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+.footer-btn-primary img,
+.footer-btn-primary svg {
+    transition: transform var(--transition-smooth);
+}
+
+.footer-btn-primary:hover {
+    background-color: var(--white-clean);
+    color: var(--color-black) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.footer-btn-primary:hover img,
+.footer-btn-primary:hover svg {
+    transform: rotate(180deg);
 }
 
 .footer-btn-secondary {
@@ -100,6 +116,7 @@
 }
 
 .footer-content-inner {
+    margin-top: 165px;
     max-width: var(--max-content-width);
     gap: 60px;
 }
@@ -181,12 +198,6 @@
     text-decoration: none;
     font-size: 18px;
     transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.footer-social-icon:hover,
-.footer-social-icon:focus-visible {
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
 }
 
 .footer-arrow-icon {

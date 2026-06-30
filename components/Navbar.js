@@ -6,11 +6,13 @@ import Image from "next/image";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const announcements = [
+    const data = [
         "FREE Resolution Upgrade",
         "30% OFF Retail Pricing",
-        ...Array(5).fill("15-Year Manufacturer Warranty")
+        "15-Year Manufacturer Warranty"
     ];
+
+    const trackItems = [...data, ...data, ...data, ...data];
 
     useEffect(() => {
         import("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -22,17 +24,15 @@ const Navbar = () => {
 
                 {/* Announcement */}
                 <div className="w-100 custom-top-bar text-white overflow-hidden">
-                    <div className="d-flex text-nowrap announcement-track align-items-center">
-                        {[...Array(2)].map((_, i) => (
-                            <div className="custom-top-bar-text" key={i}>
-                                {announcements.map((text, j) => (
-                                    <React.Fragment key={j}>
-                                        <span className="announcement-item">{text}</span>
-                                        <Image src="/w_star.svg" alt="star" width="14" height="14" />
-                                    </React.Fragment>
-                                ))}
-                            </div>
-                        ))}
+                    <div className="announcement-track">
+                        <div className="track-content">
+                            {trackItems.map((item, index) => (
+                                <div key={index} className="track-item">
+                                    <span>{item}</span>
+                                    <Image src="/w_star.svg" alt="star" width="15" height="15" />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

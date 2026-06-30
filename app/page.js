@@ -18,28 +18,28 @@ const CARDS = [
     id: "fixed-outdoor",
     title: "Fixed Outdoor LED Signs",
     button: "Shop Fixed Outdoor",
-    image: "/Solutions-1.png",
+    image: "/Solutions-1.webp",
     link: "/shop/fixed-outdoor"
   },
   {
     id: "mobile-led",
     title: "Mobile LED Signs",
     button: "Shop Mobile",
-    image: "/Solutions-2.png",
+    image: "/Solutions-2.webp",
     link: "/shop/mobile"
   },
   {
     id: "indoor-led",
     title: "Indoor LED Signs",
     button: "Shop Indoor",
-    image: "/Solutions-3.png",
+    image: "/Solutions-3.webp",
     link: "/shop/indoor"
   },
   {
     id: "custom-displays",
     title: "Custom LED Displays",
     button: "Shop Custom",
-    image: "/Solutions-4.png",
+    image: "/Solutions-4.webp",
     link: "/shop/custom"
   },
 ];
@@ -51,7 +51,7 @@ const INDUSTRIES = [
     title: "LED Signs for Public and Non-Profit Organizations",
     description: "Share community updates, events, missions, and causes with programmable displays that reach far and wide.",
     linkText: "Shop Public & Non-Profit Signs",
-    imgSrc: "/serve-1.png",
+    imgSrc: "/serve-1.webp",
     link: "#"
   },
   {
@@ -59,7 +59,7 @@ const INDUSTRIES = [
     title: "LED Signs for Retail and Businesses",
     description: "Drive foot traffic with instant price changes, promotions, specials, and eye-catching messages that convert customers.",
     linkText: "Shop Retail & Business Signs",
-    imgSrc: "/serve-2.png",
+    imgSrc: "/serve-2.webp",
     link: "#"
   },
   {
@@ -67,7 +67,7 @@ const INDUSTRIES = [
     title: "LED Signs for Partners and Resellers",
     description: "White-label options, bulk pricing, and easy integration for sign shops, installers, or affiliates to expand your offerings.",
     linkText: "Shop Partner & Resellers Signs",
-    imgSrc: "/serve-3.png",
+    imgSrc: "/serve-3.webp",
     link: "#"
   },
   {
@@ -75,7 +75,7 @@ const INDUSTRIES = [
     title: "LED Signs for Custom Architecture",
     description: "Tailor-made structural screen specs built natively to dynamically align into bespoke geometric structures.",
     linkText: "Shop Custom Signs",
-    imgSrc: "/serve-4.png",
+    imgSrc: "/serve-4.webp",
     link: "#"
   }
 ];
@@ -121,28 +121,28 @@ const BENEFIT_BOXES = [
     image: "/feature-1.svg",
     title: "Super Consistent Design",
     description: "Every XIGNZ sign uses the same 7 core components 85%+ identical across all sizes. Only the modules change (based on size & viewing distance). Less hassle, easier upgrades, no surprises.",
-    link: "/benefits/consistent-design"
+    link: "#"
   },
   {
     id: "easy-software",
     image: "/feature-2.svg",
     title: "Easy Software Everywhere",
     description: "One powerful app for all signs: animated text, images, videos. Beginners use built-in tools; pros upload JPEGs/MP4s. Schedule everything in one go: holidays, random days, whatever.",
-    link: "/benefits/easy-software"
+    link: "#"
   },
   {
     id: "smart-brightness",
     image: "/feature-3.svg",
     title: "Auto-Smart Brightness",
     description: "Built-in light sensor adjusts day/night automatically. Failsafe defaults + software scheduling overrides. Looks perfect, saves energy, no manual tweaks.",
-    link: "/benefits/smart-brightness"
+    link: "#"
   },
   {
     id: "lifetime-help",
     image: "/feature-4.svg",
     title: "Lifetime Support",
     description: "2-year full parts warranty + lifetime prorated exchange. Lifetime free remote help & onboarding (campaigns never die if someone leaves). Free quarterly design training sessions (exclusive to customers).",
-    link: "/benefits/lifetime-help"
+    link: "#"
   }
 ];
 
@@ -214,25 +214,25 @@ const reviewData = [
 // Action
 const works = [
   {
-    img: "/Solutions-1.png",
+    img: "/Solutions-1.webp",
     title: "Double-sided programmable LED sign for highway visibility",
     desc: "Highway double-sided display",
     location: "Houston, TX",
   },
   {
-    img: "/Solutions-2.png",
+    img: "/Solutions-2.webp",
     title: "Full-color LED sign for retail storefront",
     desc: "Storefront full-color sign",
     location: "Rosenberg, TX",
   },
   {
-    img: "/Solutions-3.png",
+    img: "/Solutions-3.webp",
     title: "Double-sided programmable LED sign",
     desc: "Highway digital display",
     location: "New York, NY",
   },
   {
-    img: "/Solutions-4.png",
+    img: "/Solutions-4.webp",
     title: "Outdoor LED display solution",
     desc: "Business signage",
     location: "Texas, TX",
@@ -282,10 +282,19 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="hero-section position-relative d-flex align-items-center">
-        <div className="container-xl">
+        <Image
+          src="/bg.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="hero-bg-image"
+        />
+
+        <div className="container-xl position-relative">
           <div className="row align-items-center justify-content-between g-4 g-lg-5 text-center text-lg-start">
 
-            {/* Left Column */}
             <div className="col-lg-7 col-12">
               <div className="hero-content-wrapper">
                 <h1 className="hero-title mb-3">
@@ -299,14 +308,24 @@ export default function Home() {
 
                 <div className="hero-actions-group mb-4 justify-content-center justify-content-lg-start">
                   <Link href="#" className="btn btn-custom-yellow shadow-sm">
-                    <Image src="/star.svg" alt="star" width="24" height="24" />
+                    <Image
+                      src="/star.svg"
+                      alt="star"
+                      width={24}
+                      height={24}
+                    />
                     Build Your Custom Sign Now
                   </Link>
 
-                  <Link href="#how-it-works" className="see-how-link text-white text-decoration-none">
+                  <Link href="#" className="see-how-link text-white text-decoration-none">
                     See How XIGNZ Works
                     <span className="arrow-icon ms-2">
-                      <Image src="/w_arrow.svg" alt="arrow" width="24" height="24" />
+                      <Image
+                        src="/w_arrow.svg"
+                        alt="arrow"
+                        width={24}
+                        height={24}
+                      />
                     </span>
                   </Link>
                 </div>
@@ -315,35 +334,49 @@ export default function Home() {
                   <div className="star-group me-2">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className="me-1">
-                        <Image src="/rating.svg" alt="star" width="20" height="20" />
+                        <Image
+                          src="/rating.svg"
+                          alt="star"
+                          width={20}
+                          height={20}
+                        />
                       </span>
                     ))}
                   </div>
-                  <span className="rating-score me-2">5.0</span>
-                  <span className="review-count">Based on 128 reviews</span>
+
+                  <span className="rating-score me-2">
+                    5.0
+                  </span>
+
+                  <span className="review-count">
+                    Based on 128 reviews
+                  </span>
                 </div>
+
               </div>
             </div>
 
-            {/* Right Column */}
+
             <div className="col-lg-5 col-12 d-flex justify-content-center justify-content-lg-end">
               <div className="hero-image-wrapper mt-4 mt-lg-0">
+
                 <Image
-                  src="/LED.png"
+                  src="/LED.webp"
                   alt="Digital LED Sign Cabinets"
                   width={545}
                   height={369}
                   priority
+                  fetchPriority="high"
+                  sizes="(max-width: 992px) 100vw, 545px"
                   className="img-fluid object-contain hero-led-img"
                 />
+
               </div>
             </div>
 
           </div>
         </div>
       </section>
-
-
 
       {/* Industries Section */}
       <section className="industries-section position-relative">
@@ -526,7 +559,7 @@ export default function Home() {
             <div className="col-12 col-xl-6 showcase-visuals-column">
               <div className="showcase-image-frame">
                 <Image
-                  src="/LED-1.png"
+                  src="/LED-1.webp"
                   alt="Interchangeable LED Cabinets"
                   fill
                   className="object-fit-contain p-3"
@@ -535,7 +568,7 @@ export default function Home() {
               </div>
               <div className="showcase-image-frame">
                 <Image
-                  src="/LED-2.png"
+                  src="/LED-2.webp"
                   alt="Pixel Perfect LED Modules"
                   fill
                   className="object-fit-contain p-3"
@@ -666,7 +699,7 @@ export default function Home() {
             <div className="col-12 col-lg-6 order-lg-last d-flex justify-content-center">
               <div className="process-image-frame">
                 <Image
-                  src="/monitor.png"
+                  src="/monitor.webp"
                   alt="LED sign configurator preview"
                   width={620}
                   height={557}
@@ -903,7 +936,7 @@ export default function Home() {
             <div className="col-12 text-center">
               <div className="d-flex flex-wrap justify-content-center align-items-center gap-3">
                 <button className="works-action-btn btn bg-white text-black border fw-medium px-4 py-2">
-                  <Image src="/w_star.svg" alt="star" width="25" height="25" />
+                  <Image src="/star.svg" alt="star" width="25" height="25" />
                   Inspired? Join our growing list of happy customers.
                 </button>
                 <Link href="#" className="works-action-link text-white text-decoration-none fw-medium px-4 py-2 d-inline-flex align-items-center gap-2">
