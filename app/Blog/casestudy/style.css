@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@600&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    --primary-blue: #1752bd;
+    --primary-blue-hover: #0d3885;
+    --bg-white: #ffffff;
+    --text-dark: #101010;
+    --text-muted: #626262;
+    --border-light: #f3f4f6;
+    --accent-yellow: #ffcc02;
+}
+
+/* Hero Header */
+.insights-hero {
+    background-color: var(--primary-blue);
+    min-height: 200px;
+    padding: 40px 0;
+}
+
+.hero-title {
+    font-family: "Anek Latin", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-filter-panel {
+    background: var(--primary-blue);
+    border-radius: 8px;
+    height: auto;
+    min-height: 480px;
+}
+
+.sidebar-search-bar {
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 100px;
+}
+
+.sidebar-search-input {
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-dark);
+}
+
+.sidebar-search-input::placeholder {
+    color: #B8B8B8;
+}
+
+.sidebar-reset-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-reset-btn:hover {
+    opacity: 1;
+}
+
+.state-name-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+.chevron-icon--collapsed {
+    transform: rotate(180deg);
+}
+
+.native-checkbox-hidden {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox-box {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox-box--active {
+    background: #FFFFFF;
+}
+
+.checkbox-box--inactive {
+    background: #4A75CB;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.city-label-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+/* Right Side */
+.post-card {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.post-card__image-wrapper {
+    position: relative;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.post-card__img {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.post-card__badge {
+    background: var(--accent-yellow);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.post-card__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    line-height: 1.3;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+.post-card__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-card__btn {
+    color: var(--primary-blue);
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.post-card__btn-text {
+    transition: padding-right 0.3s ease;
+}
+
+.post-card__arrow {
+    transition: transform 0.3s ease;
+}
+
+.post-card__arrow--rotated {
+    transform: rotate(-90deg) !important;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(23, 82, 189, 0.15);
+}
+
+.post-card:hover .post-card__img {
+    transform: scale(1.06);
+}
+
+.post-card:hover .post-card__title {
+    color: var(--primary-blue-hover);
+}
+
+.post-card:hover .post-card__btn,
+.post-card__btn:hover {
+    color: var(--primary-blue-hover);
+}
+
+.post-card__btn:hover .post-card__arrow:not(.post-card__arrow--rotated) {
+    transform: translateX(4px);
+}
+
+/* Sidebar Hover Effects */
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+.custom-checkbox-label:hover .checkbox-box--inactive {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+}
+
+.accordion-state-header {
+    transition: opacity 0.2s ease;
+}
+
+.accordion-state-header:hover {
+    opacity: 0.85;
+}

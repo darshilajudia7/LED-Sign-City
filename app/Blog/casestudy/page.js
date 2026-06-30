@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import "../installation/style.css";
+import "./style.css";
 
 export default function CaseStudies() {
     // Software Platforms & Solutions filters
