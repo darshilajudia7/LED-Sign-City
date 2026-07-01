@@ -23,7 +23,7 @@ export default function Ads() {
             date: 'Jan 9, 2026',
             title: '2×4 LED Sign Specifications - Compact Roadside Display',
             description: 'The 2×4 LED Sign is a compact, outdoor ready digital display built for high-visibility messaging in a smaller footprint. A strong fit for storefronts, entrances, and drive lanes.',
-            imageSrc: '/ads_temp.webp'
+            imageSrc: '/blog/ads_temp.webp'
         },
         {
             id: 2,
@@ -93,10 +93,11 @@ export default function Ads() {
                                                 <Image
                                                     src={node.imageSrc}
                                                     alt={node.title}
-                                                    placeholder="blur"
-                                                    blurDataURL={node.imageSrc}
                                                     fill
+                                                    priority
+                                                    fetchPriority="high"
                                                     className="object-fit-cover card-thumbnail"
+                                                    sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 400px"
                                                 />
                                             </div>
 
@@ -114,9 +115,9 @@ export default function Ads() {
                                                     </div>
 
                                                     {/* Title */}
-                                                    <h6 className="heading-title-text w-100 d-flex align-items-center">
+                                                    <p className="heading-title-text w-100 d-flex align-items-center">
                                                         {node.title}
-                                                    </h6>
+                                                    </p>
 
                                                     {/* Content */}
                                                     <p className={`description-paragraph-text w-100 ${isExpanded ? 'expanded' : ''}`}>

@@ -16,25 +16,25 @@ export default function ProductHero() {
     // Gallery works data
     const works = [
         {
-            img: "/Solutions-1.png",
+            img: "/Solutions-1.webp",
             title: "Double-sided programmable LED sign for highway visibility",
             desc: "Highway double-sided display",
             location: "Houston, TX",
         },
         {
-            img: "/Solutions-2.png",
+            img: "/Solutions-2.webp",
             title: "Full-color LED sign for retail storefront",
             desc: "Storefront full-color sign",
             location: "Rosenberg, TX",
         },
         {
-            img: "/Solutions-3.png",
+            img: "/Solutions-3.webp",
             title: "Double-sided programmable LED sign for highway visibility",
             desc: "Highway double-sided display",
             location: "New York, NY",
         },
         {
-            img: "/Solutions-4.png",
+            img: "/Solutions-4.webp",
             title: "Full-color LED sign for retail storefront",
             desc: "Storefront full-color sign",
             location: "Rosenberg, TX",
@@ -308,10 +308,10 @@ export default function ProductHero() {
             <section className="hero-frame">
 
                 <div className="container p-0 h-100 position-relative">
-                    <div className="row h-100 align-items-center">
+                    <div className="row h-100 align-items-center g-4">
 
                         {/* Left Side  */}
-                        <div className="col-12 col-lg-6 z-1">
+                        <div className="col-12 col-lg-6 z-1 order-2 order-lg-1">
                             <div className="left-container">
 
                                 <div className="badge-row">
@@ -345,9 +345,9 @@ export default function ProductHero() {
                                     <span className="price-amount">$13,648.70</span>
                                 </div>
 
-                                <div className="action-button-group">
+                                <div className="action-button-group flex-wrap">
                                     <button className="btn-primary-custom">
-                                        <Image src="/star.svg" alt="star" height="20" width="20" />
+                                        <Image src="/star.svg" alt="star" height="20" width="20" className="hero-star-icon" />
                                         Build Your LED Sign
                                     </button>
                                     <button className="btn-secondary-custom">
@@ -356,7 +356,7 @@ export default function ProductHero() {
                                     </button>
                                 </div>
 
-                                <div className="trust-row">
+                                <div className="trust-row flex-wrap">
                                     <div className="trust-item">
                                         <Image src="/outdoor_product/warr.svg" alt="Warranty" height="20" width="20" />
                                         <span>Up to 2-Year Warranty</span>
@@ -376,36 +376,48 @@ export default function ProductHero() {
                         </div>
 
                         {/* Right side */}
-                        <div className="col-12 col-lg-6 position-relative d-flex flex-column align-items-center justify-content-center">
-                            <div className="main-image-wrapper">
+                        <div className="col-12 col-lg-6 position-relative d-flex flex-column align-items-center justify-content-center order-1 order-lg-2 mt-4 mt-lg-0">
+                            <div className="main-image-wrapper mx-auto">
                                 <img
-                                    src="/LED.png"
+                                    src="/LED.webp"
                                     alt="4x4 Outdoor Custom LED Sign Panels"
                                     className="main-showcase-image"
                                 />
                             </div>
 
-                            <div className="thumbnail-carousel-container">
-                                <button className="carousel-arrow-left">
-                                    <Image src="/outdoor_product/arrow.svg" alt="Prev" className="rotate-180" height="24" width="24" />
-                                </button>
-
-                                <div className="thumb-frame">
-                                    <Image src="/outdoor_product/img-1.png" alt="Thumbnail View 1" height="101" width="151" />
-                                </div>
-                                <div className="thumb-frame">
-                                    <Image src="/outdoor_product/img-2.png" alt="Thumbnail View 2" height="101" width="151" />
-                                </div>
-                                <div className="thumb-frame">
-                                    <Image src="/outdoor_product/img-3.png" alt="Thumbnail View 3" height="101" width="151" />
-                                </div>
-                                <div className="thumb-frame">
-                                    <Image src="/outdoor_product/img-4.png" alt="Thumbnail View 4" height="101" width="151" />
+                            <div className="thumbnail-carousel-container row g-3 align-items-center justify-content-center justify-content-lg-start">
+                                <div className="col-auto d-flex align-items-center">
+                                    <button className="carousel-arrow-left">
+                                        <Image src="/outdoor_product/arrow.svg" alt="Prev" className="rotate-180" height="24" width="24" />
+                                    </button>
                                 </div>
 
-                                <button className="carousel-arrow-right">
-                                    <Image src="/outdoor_product/arrow.svg" alt="Next" height="24" width="24" />
-                                </button>
+                                <div className="col-auto">
+                                    <div className="thumb-frame">
+                                        <Image src="/outdoor_product/img-1.webp" alt="Thumbnail View 1" height="101" width="151" />
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <div className="thumb-frame">
+                                        <Image src="/outdoor_product/img-2.webp" alt="Thumbnail View 2" height="101" width="151" />
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <div className="thumb-frame">
+                                        <Image src="/outdoor_product/img-3.webp" alt="Thumbnail View 3" height="101" width="151" />
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <div className="thumb-frame">
+                                        <Image src="/outdoor_product/img-4.webp" alt="Thumbnail View 4" height="101" width="151" />
+                                    </div>
+                                </div>
+
+                                <div className="col-auto d-flex align-items-center">
+                                    <button className="carousel-arrow-right">
+                                        <Image src="/outdoor_product/arrow.svg" alt="Next" height="24" width="24" />
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -472,7 +484,7 @@ export default function ProductHero() {
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-product-card">
                                     <div className="led-image-placeholder-big">
-                                        <Image src="/outdoor_product/overview-1.png" alt="overview" height="260" width="260" />
+                                        <Image src="/outdoor_product/overview-1.webp" alt="overview" height="260" width="260" />
                                     </div>
                                     <div className="led-card-header-row">
                                         <div className="led-title-container">
@@ -505,7 +517,7 @@ export default function ProductHero() {
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-product-card">
                                     <div className="led-image-placeholder-big">
-                                        <Image src="/outdoor_product/overview-2.png" alt="overview" height="260" width="260" />
+                                        <Image src="/outdoor_product/overview-2.webp" alt="overview" height="260" width="260" />
 
                                     </div>
                                     <div className="led-card-header-row">
@@ -539,7 +551,7 @@ export default function ProductHero() {
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-product-card">
                                     <div className="led-image-placeholder-big">
-                                        <Image src="/outdoor_product/overview-3.png" alt="overview" height="260" width="260" />
+                                        <Image src="/outdoor_product/overview-3.webp" alt="overview" height="260" width="260" />
                                     </div>
                                     <div className="led-card-header-row">
                                         <div className="led-title-container">
@@ -581,7 +593,7 @@ export default function ProductHero() {
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-spec-card">
                                     <div className="led-header-icon-layout">
-                                        <Image src="/outdoor_product/weight.png" alt="weight" height="74" width="74" />
+                                        <Image src="/outdoor_product/weight.webp" alt="weight" height="74" width="74" />
                                         <h4 className="led-icon-heading">Weight</h4>
                                     </div>
                                     <div className="led-spec-list">
@@ -600,7 +612,7 @@ export default function ProductHero() {
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-spec-card">
                                     <div className="led-header-icon-layout">
-                                        <Image src="/outdoor_product/power.png" alt="power" height="74" width="74" />
+                                        <Image src="/outdoor_product/power.webp" alt="power" height="74" width="74" />
                                         <h4 className="led-icon-heading">Power</h4>
                                     </div>
                                     <div className="led-spec-list">
@@ -631,7 +643,7 @@ export default function ProductHero() {
 
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-info-card">
-                                    <Image src="/outdoor_product/communication.png" alt="weight" height="74" width="74" />
+                                    <Image src="/outdoor_product/communication.webp" alt="weight" height="74" width="74" />
                                     <div className="led-info-content">
                                         <h4 className="led-info-title">Communication</h4>
                                         <p className="led-info-desc">LAN, WIFI, 4G (Optional)</p>
@@ -641,7 +653,7 @@ export default function ProductHero() {
 
                             <div className="col-12 col-md-4 px-2">
                                 <div className="led-info-card">
-                                    <Image src="/outdoor_product/support.png" alt="weight" height="74" width="74" />
+                                    <Image src="/outdoor_product/support.webp" alt="weight" height="74" width="74" />
                                     <div className="led-info-content">
                                         <h4 className="led-info-title">Support</h4>
                                         <p className="led-info-desc">Images, Videos, Slides, and more.</p>
@@ -1309,7 +1321,7 @@ export default function ProductHero() {
                             <div className="group-30">
                                 <div className="group-24">
                                     <Image
-                                        src="/outdoor_product/monitor.png"
+                                        src="/outdoor_product/monitor.webp"
                                         alt="monitor"
                                         width="620"
                                         height="617"
