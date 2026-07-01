@@ -44,7 +44,7 @@ const Navbar = () => {
                         <Link href="/" className="navbar-brand p-0 m-0 d-flex align-items-center">
                             <div className="custom-logo-wrapper">
                                 <Image
-                                    src="/logo.svg"
+                                    src="/Logo.svg"
                                     alt="LED SIGN CITY Logo and Text"
                                     width={200}
                                     height={34}
@@ -59,11 +59,24 @@ const Navbar = () => {
                             <ul className="navbar-nav custom-nav-links my-3 my-lg-0 align-items-lg-center me-auto">
                                 <li className="nav-item dropdown custom-dropdown-item">
                                     <button
-                                        className="nav-link dropdown-toggle border-0 bg-transparent p-0 text-start w-100 d-flex align-items-center gap-1"
+                                        className="nav-link border-0 bg-transparent p-0 text-start w-100 d-flex align-items-center gap-1"
                                         data-bs-toggle="dropdown"
                                         type="button"
                                     >
                                         Shop Displays
+                                        {/* Added the SVG icon here */}
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
                                     </button>
                                     <ul className="dropdown-menu shadow border-0 rounded-3 p-2 custom-mobile-dropdown">
                                         <li><Link href="/outdoor_product" className="dropdown-item rounded-2">Outdoor LED Displays</Link></li>

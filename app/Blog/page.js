@@ -109,7 +109,7 @@ export default function Blog() {
                                                 <div className="icon-overlay-badge">
                                                     <Image src={card.icon} alt={card.title} width={20} height={20} />
                                                 </div>
-                                                <h6 className="card-title-text">{card.title}</h6>
+                                                <p className="card-title-text">{card.title}</p>
                                                 <p className="card-body-description">{card.description}</p>
                                             </div>
                                             <div className="d-flex justify-content-between align-items-center mt-3">
@@ -126,7 +126,7 @@ export default function Blog() {
 
                         {/* Download Container */}
                         <div id="frame-downloads-panel" className="download-panel-box">
-                            <h5 className="section-title-blue">Software Downloads</h5>
+                            <p className="section-title-blue">Software Downloads</p>
                             <p className="section-subtitle-gray">All software is free. Download the version that matches your sign type.</p>
 
                             <div className="software-cards-grid">
@@ -134,7 +134,7 @@ export default function Blog() {
                                     <div key={file.id} className="software-card-item">
                                         <div>
                                             <div className="software-card-header">
-                                                <h6 className="software-card-title">{file.title}</h6>
+                                                <p className="software-card-title">{file.title}</p>
                                                 <span className="version-pill-tag">{file.version}</span>
                                             </div>
                                             <p className="software-card-desc">{file.description}</p>

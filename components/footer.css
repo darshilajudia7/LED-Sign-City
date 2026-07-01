@@ -34,8 +34,8 @@
 }
 
 .footer-cta-heading {
-    font-weight: 600;
-    font-size: 28px;
+    font-weight: bold;
+    font-size: 18px;
     line-height: 1.3;
     color: var(--dark-charcoal);
     max-width: 800px;
@@ -133,7 +133,7 @@
 
 .footer-col-heading {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 0.875rem;
     line-height: 1.2;
     color: var(--white-clean);
 }

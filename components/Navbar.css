@@ -190,14 +190,6 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.dropdown-toggle::after {
-    border: none;
-    content: "\F282";
-    font-family: "bootstrap-icons";
-    font-size: 12px;
-    vertical-align: middle;
-}
-
 /* Responsive */
 @media (min-width: 992px) {
     .custom-nav-links {

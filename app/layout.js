@@ -33,6 +33,7 @@ const anek = Anek_Latin({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${anek.variable}`}>
+      
       <body>
         <Navbar />
         {children}

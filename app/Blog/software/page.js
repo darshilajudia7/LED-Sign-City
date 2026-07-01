@@ -67,13 +67,13 @@ export default function LedSignsZoningGuide() {
                             <div className="article-section-spacing">
                                 <div className="responsive-image-frame">
                                     <Image
-                                        src="/blog/software.png"
+                                        src="/blog/software.webp"
                                         alt="One-Stop Cloud Platform Dashboard"
                                         width={626}
                                         height={433}
                                         className="img-fluid custom-styled-img"
                                         placeholder="blur"
-                                        blurDataURL="/software.png"
+                                        blurDataURL="/software.webp"
                                     />
                                 </div>
                             </div>

@@ -84,8 +84,8 @@
 .card-title-text {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 0.875rem;
     line-height: 24px;
     color: var(--text-dark);
 }
@@ -125,8 +125,8 @@
 .section-title-blue {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 14px;
     line-height: 29px;
     color: var(--primary-blue);
     margin-bottom: 8px;
@@ -145,8 +145,9 @@
 
 .software-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
+    width: 100%;
 }
 
 .software-card-item {
@@ -160,6 +161,8 @@
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition-smooth);
+    width: 100%;
+    max-width: 100%;
 }
 
 .software-card-item:hover {
@@ -178,8 +181,8 @@
 .software-card-title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 0.875rem;
     line-height: 24px;
     color: var(--primary-blue);
     margin: 0;
@@ -221,9 +224,27 @@
     transition: var(--transition-smooth);
 }
 
-category-card-custom.download-action-link:hover {
+.download-action-link:hover {
     color: #0f3d91;
     gap: 12px;
+}
+
+@media (max-width: 767px) {
+    .top-section-frame {
+        padding: 40px 20px;
+    }
+
+    .bottom-section-frame {
+        padding: 40px 20px;
+    }
+
+    .software-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card-custom {
+        min-height: auto;
+    }
 }
 
 @media (min-width: 768px) {

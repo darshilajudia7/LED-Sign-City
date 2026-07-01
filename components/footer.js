@@ -10,9 +10,9 @@ export default function Footer() {
             {/* CTA */}
             <div className="footer-cta-wrapper px-3">
                 <div className="footer-cta-card d-flex flex-column align-items-center justify-content-center text-center">
-                    <h3 className="footer-cta-heading m-0">
+                    <p className="footer-cta-heading m-0">
                         Ready to own and Build your LED Sign that evolves?
-                    </h3>
+                    </p>
                     <div className="footer-cta-button-row d-flex flex-wrap justify-content-center">
                         <button type="button" className="footer-btn-primary">
                             <Image src="/star.svg" alt="star" width="23" height="23" />
@@ -36,7 +36,7 @@ export default function Footer() {
                     {/* Navigation Columns */}
                     <nav className="footer-link-columns row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5" aria-label="Footer Navigation">
                         <div className="col footer-col d-flex flex-column">
-                            <h6 className="footer-col-heading m-0">Shop Sign</h6>
+                            <p className="footer-col-heading m-0">Shop Sign</p>
                             <ul className="footer-col-list m-0 p-0 list-unstyled d-flex flex-column">
                                 <li><Link href="#" className="footer-col-link">Custom Sign Builder</Link></li>
                                 <li><Link href="#" className="footer-col-link">Outdoor LED Signs</Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
                         </div>
 
                         <div className="col footer-col d-flex flex-column">
-                            <h6 className="footer-col-heading m-0">Services</h6>
+                            <p className="footer-col-heading m-0">Services</p>
                             <ul className="footer-col-list m-0 p-0 list-unstyled d-flex flex-column">
                                 <li><Link href="#" className="footer-col-link">Installation</Link></li>
                                 <li><Link href="#" className="footer-col-link">Managed LED Ads</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
                         </div>
 
                         <div className="col footer-col d-flex flex-column">
-                            <h6 className="footer-col-heading m-0">Learn</h6>
+                            <p className="footer-col-heading m-0">Learn</p>
                             <ul className="footer-col-list m-0 p-0 list-unstyled d-flex flex-column">
                                 <li><Link href="#" className="footer-col-link">About Us</Link></li>
                                 <li><Link href="#" className="footer-col-link">Past Projects</Link></li>
@@ -69,7 +69,7 @@ export default function Footer() {
                         </div>
 
                         <div className="col footer-col d-flex flex-column">
-                            <h6 className="footer-col-heading m-0">Help</h6>
+                            <p className="footer-col-heading m-0">Help</p>
                             <ul className="footer-col-list m-0 p-0 list-unstyled d-flex flex-column">
                                 <li><Link href="#" className="footer-col-link">Support Desk</Link></li>
                                 <li><Link href="#" className="footer-col-link">Contact Us</Link></li>
@@ -78,7 +78,7 @@ export default function Footer() {
                         </div>
 
                         <div className="col footer-col d-flex flex-column">
-                            <h6 className="footer-col-heading m-0">Existing Customers</h6>
+                            <p className="footer-col-heading m-0">Existing Customers</p>
                             <ul className="footer-col-list m-0 p-0 list-unstyled d-flex flex-column">
                                 <li><Link href="#" className="footer-col-link">Parts Accessories</Link></li>
                                 <li><Link href="#" className="footer-col-link">Dealer Sign Up / Portal</Link></li>
@@ -122,7 +122,7 @@ export default function Footer() {
                 {/* Logo */}
                 <div className="footer-wordmark-group mx-auto d-flex justify-content-center" aria-hidden="true">
                     <Image
-                        src="/header_footer/LED-logo.png"
+                        src="/header_footer/LED-logo.webp"
                         alt="LED Sign City Large Brand Wordmark"
                         width={1351}
                         height={102}
