@@ -363,11 +363,12 @@ export default function Home() {
                 <Image
                   src="/LED.webp"
                   alt="Digital LED Sign Cabinets"
-                  width={545}
-                  height={369}
+                  width="545"
+                  height="369"
+                  quality="60"
                   priority
                   fetchPriority="high"
-                  sizes="(max-width: 992px) 100vw, 545px"
+                  sizes="100vw"
                   className="img-fluid object-contain hero-led-img"
                 />
 
@@ -563,7 +564,8 @@ export default function Home() {
                   alt="Interchangeable LED Cabinets"
                   fill
                   className="object-fit-contain p-3"
-                  priority
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  quality={65}
                 />
               </div>
               <div className="showcase-image-frame">
@@ -572,8 +574,8 @@ export default function Home() {
                   alt="Pixel Perfect LED Modules"
                   fill
                   className="object-fit-contain p-3"
-                  priority
-                />
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  quality={60} />
               </div>
             </div>
 
@@ -700,11 +702,12 @@ export default function Home() {
             <div className="col-12 col-lg-6 order-lg-last d-flex justify-content-center">
               <div className="process-image-frame">
                 <Image
-                  src="/monitor.webp"
+                  src="/Monitor.webp"
                   alt="LED sign configurator preview"
-                  width={620}
-                  height={557}
+                  width="620"
+                  height="557"
                   priority
+                  fetchPriority="high"
                   className="img-fluid object-contain"
                 />
               </div>

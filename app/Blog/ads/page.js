@@ -94,10 +94,10 @@ export default function Ads() {
                                                     src={node.imageSrc}
                                                     alt={node.title}
                                                     fill
-                                                    priority
-                                                    fetchPriority="high"
+                                                    quality="65"
                                                     className="object-fit-cover card-thumbnail"
-                                                    sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 400px"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                                                    loading="lazy"
                                                 />
                                             </div>
 
