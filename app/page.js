@@ -19,28 +19,28 @@ const CARDS = [
     title: "Fixed Outdoor LED Signs",
     button: "Shop Fixed Outdoor",
     image: "/Solutions-1.webp",
-    link: "/shop/fixed-outdoor"
+    link: "#"
   },
   {
     id: "mobile-led",
     title: "Mobile LED Signs",
     button: "Shop Mobile",
     image: "/Solutions-2.webp",
-    link: "/shop/mobile"
+    link: "#"
   },
   {
     id: "indoor-led",
     title: "Indoor LED Signs",
     button: "Shop Indoor",
     image: "/Solutions-3.webp",
-    link: "/shop/indoor"
+    link: "#"
   },
   {
     id: "custom-displays",
     title: "Custom LED Displays",
     button: "Shop Custom",
     image: "/Solutions-4.webp",
-    link: "/shop/custom"
+    link: "#"
   },
 ];
 
@@ -658,12 +658,13 @@ export default function Home() {
                 <div className="benefits-video-wrapper shadow-sm">
                   <iframe
                     className="benefits-video-iframe"
-                    src="https://www.youtube.com/embed/0i_6IzleU70"
+                    src="https://www.youtube-nocookie.com/embed/0i_6IzleU70"
                     title="How to Wire Multi-Row LED Signs: XIGNZ Modular Series by LED Sign City"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
+
               </div>
             </div>
 
@@ -788,8 +789,8 @@ export default function Home() {
                         {/* Video Aspect Container */}
                         <div className="reviews-video-frame position-relative">
                           <iframe
-                            src={item.videoUrl}
-                            title={`Movie Trailer ${item.id}`}
+                            src={item.videoUrl.replace("youtube.com", "youtube-nocookie.com")}
+                            title={`Review Video ${item.id}`}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           ></iframe>

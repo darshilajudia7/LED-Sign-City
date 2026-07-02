@@ -1,6 +1,6 @@
 :root {
-  --font-heading: var(--font-anek), system-ui, -apple-system, sans-serif;
-  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-heading: Anek Latin, system-ui, -apple-system, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, sans-serif;
 
   --background: #ffffff;
   --foreground: #171717;
@@ -620,8 +620,6 @@ body {
   height: 100%;
   border: 0;
 }
-
-
 
 /* Process Section */
 .process-section {
